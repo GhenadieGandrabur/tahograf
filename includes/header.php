@@ -1,1 +1,1 @@
-<img src="includes/img/header_tahograf.gif" alt="Tahograf srl">
+<img src="includes/img/header_tahograf.gif" alt="Tahograf srl" width="100%">

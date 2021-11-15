@@ -206,21 +206,25 @@
 }
  
 .shadowText{
-  text-shadow: 1px 1px rgb(233, 5, 5);
+  text-shadow: 1px 1px rgb(14, 2, 2);
 }
 .card{
   width: 100%;
-  height: auto;
-  border-bottom: 1px solid #000;
-  padding: 10px;
+  height: 350px;   
   margin:  auto;
 }
+.card:hover{
+   box-shadow: 5px 5px 5px #888888;
+}
 .describe{
-  padding: 10px;
+  padding: 5px 10px 10px 10px;
   text-align: justify;
-  font-size: 10px;
+  font-size: 14px;
+  overflow: hidden;
 }
 
-
+.tittle{
+  padding: 10px 10px 5px 10px;
+}
   
 
