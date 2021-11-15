@@ -1,0 +1,1 @@
+<img src="includes/img/header_tahograf.gif" alt="Tahograf srl">
