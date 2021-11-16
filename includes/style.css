@@ -226,5 +226,10 @@
 .tittle{
   padding: 10px 10px 5px 10px;
 }
+
+.picture{
+  width: 100%;
+  height: auto;
+}
   
 

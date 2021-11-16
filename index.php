@@ -24,8 +24,8 @@
         <div class="row">
             <div class="col-sm-4 p-2">
                 <div class="card">
-                    <div class="picture">
-                        <img src="includes/img/verificare_tahografe.gif" alt="tahografe" width="100%">
+                    <div class="picture ">
+                        <img src="includes/img/tahograf.gif" alt="tahografe" width="350" height="200">
                     </div>
                     <div class="tittle">
                         <h3>Tahografe </h3>
@@ -33,6 +33,51 @@
                     <div class="describe">
                         <p>Ofera tahografe si consumabile pentru toate tipurile de tahografe.
                             Tot odata si serviciile corespozatoare: verificarea tahografelor, reparearea si montarea.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4 p-2">
+                <div class="card">
+                    <div class="picture">
+                        <img src="includes/img/logo_eberspaecher.gif" alt="Eberspaecher" width="350" height="200">
+                    </div>
+                    <div class="tittle">
+                        <h3>Eberspaecher</h3>
+                    </div>
+                    <div class="describe">
+                        <p>Incalzitoarele EBERSPAECHER sunt instalete OEM la mai multe marci de camioane.
+                            Punem la dispozitia beneficiarilor nostri toata gama de produse si a pieselor de schimb.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 p-2">
+                <div class="card">
+                    <div class="picture">
+                        <img src="includes/img/logo_webasto.gif" alt="Webasto" width="350" height="200">
+                    </div>
+                    <div class="tittle">
+                        <h3>Webasto</h3>
+                    </div>
+                    <div class="describe">
+                        <p>Vindem reparam si montam orce utilaj pe care este scris WEBASTO
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 p-2">
+                <div class="card">
+                    <div class="picture">
+                        <img src="includes/img/planar.gif" alt="Planar" width="350" height="200">
+                    </div>
+                    <div class="tittle">
+                        <h3>Planar </h3>
+                    </div>
+                    <div class="describe">
+                        <p>Incalzitoarele Planar este un produs nou pe piata Moldovei. Raportul dintre pret si calitate il face
+                            competitiv pe piata europeana.
                         </p>
                     </div>
                 </div>
@@ -46,10 +91,8 @@
                         <h3>CB RADIO </h3>
                     </div>
                     <div class="describe">
-                        <p>Ofera tahografe si consumabile pentru toate tipurile de tahografe.
-                            Tot odata si serviciile corespozatoare: verificarea tahografelor, reparearea si montarea.
-                            Ofera tahografe si consumabile pentru toate tipurile de tahografe. Tot odata si serviciile
-                            corespozatoare: verificarea tahografelor, reparearea si montarea.
+                        <p>Statiile radio CB President-electronics sunt foarte solicitate de conducatorii auto datorita calitatii inalte si 
+                            aspectului atragator.
                         </p>
                     </div>
                 </div>
@@ -57,80 +100,23 @@
             <div class="col-sm-4 p-2">
                 <div class="card">
                     <div class="picture">
-                        <img src="includes/img/verificare_tahografe.gif" alt="barry" width="100%">
+                        <img src="includes/img/kenwood.gif" alt="KENWOOD" width="100%">
                     </div>
                     <div class="tittle">
-                        <h3>Webasto </h3>
+                        <h3>KENWOOD </h3>
                     </div>
                     <div class="describe">
-                        <p>Ofera tahografe si consumabile pentru toate tipurile de tahografe.
-                            Tot odata si serviciile corespozatoare: verificarea tahografelor, reparearea si montarea.
+                        <p>KENWOD este liderul mondial in producerea utilajului pentru comunicare.
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 p-2">
-                <div class="card">
-                    <div class="picture">
-                        <img src="includes/img/verificare_tahografe.gif" alt="barry" width="100%">
-                    </div>
-                    <div class="tittle">
-                        <h3>Planar </h3>
-                    </div>
-                    <div class="descibe">
-                        <p>Ofera tahografe si consumabile pentru toate tipurile de tahografe.
-                            Tot odata si serviciile corespozatoare: verificarea tahografelor, reparearea si montarea.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 p-2">
-                <div class="card">
-                    <div class="picture">
-                        <img src="includes/img/verificare_tahografe.gif" alt="barry" width="100%">
-                    </div>
-                    <div class="tittle">
-                        <h3>Kenwood </h3>
-                    </div>
-                    <div class="describe">
-                        <p>Ofera tahografe si consumabile pentru toate tipurile de tahografe.
-                            Tot odata si serviciile corespozatoare: verificarea tahografelor, reparearea si montarea.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 p-2">
-                <div class="card">
-                    <div class="picture">
-                        <img src="includes/img/verificare_tahografe.gif" alt="barry" width="100%">
-                    </div>
-                    <div class="tittle">
-                        <h3>CB Radio </h3>
-                    </div>
-                    <div class="describe">
-                        <p>Ofera tahografe si consumabile pentru toate tipurile de tahografe.
-                            Tot odata si serviciile corespozatoare: verificarea tahografelor, reparearea si montarea.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4 p-2">
-                <div class="card">
-                    <div class="picture">
-                        <img src="includes/img/verificare_tahografe.gif" alt="barry" width="100%">
-                    </div>
-                    <div class="tittle">
-                        <h3>Tahografe </h3>
-                    </div>
-                    <div class="describe">
-                        <p>Ofera tahografe si consumabile pentru toate tipurile de tahografe.
-                            Tot odata si serviciile corespozatoare: verificarea tahografelor, reparearea si montarea.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
+
         </div>
     </div>
+
+    <?php include "includes/advertising.php" ?>
     <?php include "includes/footer.php" ?>
 
 </body>
