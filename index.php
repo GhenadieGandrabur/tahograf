@@ -8,24 +8,25 @@
     <title>Tahograf srl</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="includes/style.css">
-    <script src="includes/main.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+ 
+    <link rel="stylesheet" href="style.css">
+   
 </head>
+<body>  
 
-<body>
-    <?php include "includes/menu.php" ?>
-    <?php include "includes/header.php" ?>
-
+    <?php include "includes/menu.php" ?>   
+   
+    <?php include "includes/header.php" ?> 
     <div class="container">
-        <h1 style="padding:10px;font-weight: bold; ">Tahograf SRL - deafacere cu profesionistii.</h1>
+        <h1 style="padding:10px;font-weight: bold; ">Tahograf SRL - de afacere cu profesionistii.</h1>
         <div class="row">
             <div class="col-sm-4 p-2">
-                <div class="card">
+                <div class="card"><a href="tahografe.php">
                     <div class="picture ">
-                        <img src="includes/img/tahograf.gif" alt="tahografe" width="350" height="200">
+                        <img src="img/VDO1324NEW20.jpg" alt="tahografe" width="350" height="200">
                     </div>
                     <div class="tittle">
                         <h3>Tahografe </h3>
@@ -35,13 +36,14 @@
                             Tot odata si serviciile corespozatoare: verificarea tahografelor, reparearea si montarea.
                         </p>
                     </div>
+                    </a>
                 </div>
             </div>
 
             <div class="col-sm-4 p-2">
-                <div class="card">
+                <div class="card"><a href="incalzitoare.php">
                     <div class="picture">
-                        <img src="includes/img/logo_eberspaecher.gif" alt="Eberspaecher" width="350" height="200">
+                        <img src="img/logo_eberspaecher.gif" alt="Eberspaecher" width="350" height="200">
                     </div>
                     <div class="tittle">
                         <h3>Eberspaecher</h3>
@@ -51,12 +53,13 @@
                             Punem la dispozitia beneficiarilor nostri toata gama de produse si a pieselor de schimb.
                         </p>
                     </div>
+                 </a>
                 </div>
             </div>
             <div class="col-sm-4 p-2">
-                <div class="card">
+                <div class="card"><a href="incalzitoare.php">
                     <div class="picture">
-                        <img src="includes/img/logo_webasto.gif" alt="Webasto" width="350" height="200">
+                        <img src="img/logo_webasto.gif" alt="Webasto" width="350" height="200">
                     </div>
                     <div class="tittle">
                         <h3>Webasto</h3>
@@ -65,12 +68,13 @@
                         <p>Vindem reparam si montam orce utilaj pe care este scris WEBASTO
                         </p>
                     </div>
+                   </a>
                 </div>
             </div>
             <div class="col-sm-4 p-2">
-                <div class="card">
+                <div class="card"><a href="incalzitoare.php">
                     <div class="picture">
-                        <img src="includes/img/planar.gif" alt="Planar" width="350" height="200">
+                        <img src="img/planar.jpg" alt="Planar" width="350" height="200">
                     </div>
                     <div class="tittle">
                         <h3>Planar </h3>
@@ -80,12 +84,13 @@
                             competitiv pe piata europeana.
                         </p>
                     </div>
+                    </a>
                 </div>
             </div>
             <div class="col-sm-4 p-2">
-                <div class="card">
+                <div class="card"><a href="statiiradio.php">
                     <div class="picture">
-                        <img src="includes/img/barry_300.gif" alt="barry" width="100%">
+                        <img src="img/barry_300.jpg" alt="barry" width="100%">
                     </div>
                     <div class="tittle">
                         <h3>CB RADIO </h3>
@@ -95,12 +100,13 @@
                             aspectului atragator.
                         </p>
                     </div>
+                    </a>
                 </div>
             </div>
             <div class="col-sm-4 p-2">
                 <div class="card">
                     <div class="picture">
-                        <img src="includes/img/kenwood.gif" alt="KENWOOD" width="100%">
+                        <img src="img/kenwood.gif" alt="KENWOOD" width="100%">
                     </div>
                     <div class="tittle">
                         <h3>KENWOOD </h3>
@@ -115,10 +121,10 @@
 
         </div>
     </div>
-
+   
     <?php include "includes/advertising.php" ?>
     <?php include "includes/footer.php" ?>
-
+    <script src="includes/main.js"></script>
 </body>
 
 </html>
