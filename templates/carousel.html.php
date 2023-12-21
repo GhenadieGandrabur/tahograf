@@ -2,9 +2,9 @@
     
 <div id="carousel">
     <div class="carousel-slides">
-        <div class="slide"><img src="img/president.gif" alt="Tahograf srl"></div>
-        <div class="slide"><img src="img/stoneridge.gif" alt="Tahograf srl"></div>
-        <div class="slide"><img src="img/vdo.gif" alt="Tahograf srl"></div>
+        <div class="slide"><img src="img/1381.jpg" alt="VDO"></div>
+        <div class="slide"><img src="img/stoneridge slide.jpg" alt="Stoneridge"></div>
+        <div class="slide"><img src="img/webasto slider.jpg" alt="Vebasto"></div>
     </div>
  
 </div>

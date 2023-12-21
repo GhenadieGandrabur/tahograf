@@ -7,6 +7,7 @@ class IjdbRoutes implements \Ninja\Routes {
 	private $categoriesTable;
 	private $jokeCategoriesTable;
 	private $authentication;
+	private $tahograf;
 
 	public function __construct() {
 		include __DIR__ . '/../../includes/DatabaseConnection.php';
@@ -23,131 +24,27 @@ class IjdbRoutes implements \Ninja\Routes {
 		$authorController = new \Ijdb\Controllers\Register($this->authorsTable);
 		$loginController = new \Ijdb\Controllers\Login($this->authentication);
 		$categoryController = new \Ijdb\Controllers\Category($this->categoriesTable);
+		$tahoController = new \Ijdb\Controllers\Tahograf();
+	    var_dump($authorController);
+		die;
 
 		$routes = [
-			'author/register' => [
-				'GET' => [
-					'controller' => $authorController,
-					'action' => 'registrationForm'
-				],
-				'POST' => [
-					'controller' => $authorController,
-					'action' => 'registerUser'
-				]
-			],
-			'author/success' => [
-				'GET' => [
-					'controller' => $authorController,
-					'action' => 'success'
-				]
-			],
-			'author/permissions' => [
-				'GET' => [
-					'controller' => $authorController,
-					'action' => 'permissions'
-				],
-				'POST' => [
-					'controller' => $authorController,
-					'action' => 'savePermissions'
-				],
-				'login' => true
-			],
-			'author/list' => [
-				'GET' => [
-					'controller' => $authorController,
-					'action' => 'list'
-				],
-				'login' => true
-			],
-			'joke/edit' => [
-				'POST' => [
-					'controller' => $jokeController,
-					'action' => 'saveEdit'
-				],
-				'GET' => [
-					'controller' => $jokeController,
-					'action' => 'edit'
-				],
-				'login' => true
-			],
-			'joke/delete' => [
-				'POST' => [
-					'controller' => $jokeController,
-					'action' => 'delete'
-				],
-				'login' => true
-			],
-			'joke/list' => [
-				'GET' => [
-					'controller' => $jokeController,
-					'action' => 'list'
-				]
-			],
-			'login/error' => [
-				'GET' => [
-					'controller' => $loginController,
-					'action' => 'error'
-				]
-			],
-			'login/permissionserror' => [
-				'GET' => [
-					'controller' => $loginController,
-					'action' => 'permissionsError'
-				]
-			],
-			'login/success' => [
-				'GET' => [
-					'controller' => $loginController,
-					'action' => 'success'
-				]
-			],
-			'logout' => [
-				'GET' => [
-					'controller' => $loginController,
-					'action' => 'logout'
-				]
-			],
-			'login' => [
-				'GET' => [
-					'controller' => $loginController,
-					'action' => 'loginForm'
-				],
-				'POST' => [
-					'controller' => $loginController,
-					'action' => 'processLogin'
-				]
-			],
-			'category/edit' => [
-				'POST' => [
-					'controller' => $categoryController,
-					'action' => 'saveEdit'
-				],
-				'GET' => [
-					'controller' => $categoryController,
-					'action' => 'edit'
-				],
-				'login' => true,
-				'permissions' => \Ijdb\Entity\Author::EDIT_CATEGORIES
-			],
-			'category/delete' => [
-				'POST' => [
-					'controller' => $categoryController,
-					'action' => 'delete'
-				],
-				'login' => true,
-				'permissions' => \Ijdb\Entity\Author::REMOVE_CATEGORIES
-			],
-			'category/list' => [
-				'GET' => [
-					'controller' => $categoryController,
-					'action' => 'list'
-				],
-				'login' => true,
-				'permissions' => \Ijdb\Entity\Author::EDIT_CATEGORIES
-			],
+			
 			'' => [
 				'GET' => [
-					'controller' => $jokeController,
+					'controller' => $tahoController,
+					'action' => 'home'
+				]
+				],
+			'tahografe' => [
+				'GET' => [
+					'controller' => $tahoController,
+					'action' => 'tahograf'
+				]
+				],
+			'incalzitoare' => [
+				'GET' => [
+					'controller' => $tahoController,
 					'action' => 'home'
 				]
 			]

@@ -9,7 +9,7 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#">Tahografe</a>
+        <a href="/tahografe">Tahografe</a>
         <a href="#">Incalzitoare</a>
         <a href="#">Statii radio</a>
       </div>
