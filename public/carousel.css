@@ -1,0 +1,25 @@
+#carousel {
+   position: relative;
+   width: 100%;
+   margin: auto;
+   overflow: hidden;
+}
+
+.carousel-slides {
+   display: flex;
+   width: 100%; /* Adjust based on the number of slides (e.g., 3 slides = 300%) */
+}
+
+.slide {
+   width: 100%; /* 100% of the carousel container */
+   flex: 0 0 auto; /* Prevent flexbox from shrinking or growing the slides */
+}
+
+.slide img {
+   width: 100%;
+   display: block;
+}
+
+
+.prev { left: 0; }
+.next { right: 0; }

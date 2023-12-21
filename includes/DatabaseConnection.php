@@ -1,4 +1,3 @@
-
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=taho;charset=utf8', 'administrator', 'Cni336$$');
+$pdo = new PDO('mysql:host=localhost;dbname=ijdb;charset=utf8', 'root', '');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
