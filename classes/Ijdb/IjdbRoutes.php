@@ -4,10 +4,12 @@ namespace Ijdb;
 class IjdbRoutes implements \Ninja\Routes {
 	private $authorsTable;
 	private $jokesTable;
+	private $tahoTable;
+	private $producerTable;
 	private $categoriesTable;
 	private $jokeCategoriesTable;
 	private $authentication;
-	private $tahograf;
+	
 
 	public function __construct() {
 		include __DIR__ . '/../../includes/DatabaseConnection.php';
@@ -17,6 +19,8 @@ class IjdbRoutes implements \Ninja\Routes {
  		$this->categoriesTable = new \Ninja\DatabaseTable($pdo, 'category', 'id', '\Ijdb\Entity\Category', [&$this->jokesTable, &$this->jokeCategoriesTable]);
  		$this->jokeCategoriesTable = new \Ninja\DatabaseTable($pdo, 'joke_category', 'categoryId');
 		$this->authentication = new \Ninja\Authentication($this->authorsTable, 'email', 'password');
+ 		$this->tahoTable = new \Ninja\DatabaseTable($pdo, 'products', 'catigory_id');
+ 		$this->producerTable = new \Ninja\DatabaseTable($pdo, 'producers', 'id');
 	}
 
 	public function getRoutes(): array {
@@ -24,12 +28,9 @@ class IjdbRoutes implements \Ninja\Routes {
 		$authorController = new \Ijdb\Controllers\Register($this->authorsTable);
 		$loginController = new \Ijdb\Controllers\Login($this->authentication);
 		$categoryController = new \Ijdb\Controllers\Category($this->categoriesTable);
-		$tahoController = new \Ijdb\Controllers\Tahograf();
-	    var_dump($authorController);
-		die;
+		$tahoController = new \Ijdb\Controllers\Tahograf($this->tahoTable, $this->producerTable);	 
 
-		$routes = [
-			
+		$routes = [			
 			'' => [
 				'GET' => [
 					'controller' => $tahoController,
@@ -38,14 +39,26 @@ class IjdbRoutes implements \Ninja\Routes {
 				],
 			'tahografe' => [
 				'GET' => [
-					'controller' => $tahoController,
+					'controller' => 	$tahoController,
 					'action' => 'tahograf'
 				]
 				],
-			'incalzitoare' => [
+			'heaters' => [
 				'GET' => [
 					'controller' => $tahoController,
-					'action' => 'home'
+					'action' => 'heaters'
+				]
+				],
+			'radiocb' => [
+				'GET' => [
+					'controller' => $tahoController,
+					'action' => 'radioCb'
+				]
+				],
+			'radiovhfuhf' => [
+				'GET' => [
+					'controller' => $tahoController,
+					'action' => 'radiovhfuhf'
 				]
 			]
 		];

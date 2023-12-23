@@ -10,8 +10,9 @@
       </button>
       <div class="dropdown-content">
         <a href="/tahografe">Tahografe</a>
-        <a href="#">Incalzitoare</a>
-        <a href="#">Statii radio</a>
+        <a href="/heaters">Incalzitoare</a>
+        <a href="/radioCb">Radio CB</a>
+        <a href="/radiovhfuhf">Radio vhf/uhf</a>
       </div>
     </div>
     <div class="dropdown">

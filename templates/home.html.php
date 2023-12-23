@@ -7,15 +7,18 @@
         <div class="col-s-2 col-2" ></div>
             <div class="col-s-8 col-8 ">
                 <h2>Tahograf SRL - de afacere cu profesionistii.</h2>
-
-                <div class="col-s-4 col-4">
-                    <div class="cardhome">
-                        <img src="img/VDO logo.png" alt="VDO" style="width:100%">
-                        <h1>VDO</h1>                        
-                        <p>Toate lucrarile cu tahografele de toate tipurile.</p>
-                        <a href="/tahografe.php"><p><button>Mai multe</button></p></a>
+                <a href="/tahografe">
+                    <div class="col-s-4 col-4">
+                        <div class="cardhome">
+                            <img src="img/VDO logo.png" alt="VDO" style="width:100%">
+                            <h1>VDO</h1>                        
+                            <p>Toate lucrarile cu tahografele de toate tipurile.</p>
+                            <a href="/tahografe.php"><p><button>Mai multe</button></p></a>
+                        </div>
                     </div>
-                </div>
+                </a>
+
+                <a href="/heaters">
                 <div class="col-s-4 col-4">
                     <div class="cardhome">
                         <img src="img/logo stoneridge.gif" alt="stoneridge" style="width:100%">
@@ -24,14 +27,18 @@
                         <a href="/tahografe.php"><p><button>Mai multe</button></p></a>
                     </div>
                 </div>
+                </a>
+
+                <a href="/heaters">
                 <div class="col-s-4 col-4">
                     <div class="cardhome">
-                        <img src="img/logo_eberspaecher.gif" alt="Denim Jeans" style="width:100%">
+                        <img src="img/logo_eberspaecher.gif" alt="Eberspaecher" style="width:100%">
                         <h1>Eberspaecher</h1>                        
                         <p>Toate lucrarile cu tahografele de toate tipurile.</p>
                         <p><button>Mai multe</button></p>
                     </div>
                 </div>
+                </a>
                 <div class="col-s-4 col-4">
                     <div class="cardhome">
                         <img src="img/logo_webasto.gif" alt="Denim Jeans" style="width:100%">

@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="/footer.css">
 		<link rel="stylesheet" href="/carousel.css">
 		<link rel="stylesheet" href="/tahograf.css">
+		<link rel="stylesheet" href="/modal.css">
 		<title><?=$title?></title>
 	</head>
 	<body>

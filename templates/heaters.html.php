@@ -1,15 +1,16 @@
 <div class="row"> 
   <div class="col-s-2 col-2" ></div>
   <div class="col-s-8 col-8 ">
-      <h2>Tahografe si accesorii</h2>
+      <h2>Incalzitoare si accesorii</h2>
       <?php foreach($allproducts as $product): ?>
-        <?php if($product['taho']->category_id == 1):?>
+        <?php if($product['taho']->category_id == 2):?>
+
             <div class="col-s-4 col-4">
                 <div class="cardhome">
                     <img src="/img/<?=trim($product['taho']->code)?>.jpg" alt="<?=$product['taho']->title?>" >
-                      <div id="myModal" class="modal">                        
+                      <div id="myModal" class="modal">
                         <span class="close">&times;</span>
-                        <img class="modal-content" id="img01">                        
+                        <img class="modal-content" id="img01">
                         <div id="caption"></div>
                       </div>
                     <div class="describehome">

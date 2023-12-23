@@ -45,11 +45,7 @@ class Joke {
 				];
 	}
 
-	public function home() {
-		$title = 'Internet Joke Database';
 
-		return ['template' => 'home.html.php', 'title' => $title];
-	}
 
 	public function delete() {
 
@@ -103,5 +99,8 @@ class Joke {
 					]
 				];
 	}
+
+	
+
 	
 }

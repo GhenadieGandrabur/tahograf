@@ -1,11 +1,12 @@
 .cardhome {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  position: relative;  
    max-width: 300px;
    margin: auto;
-   text-align: center;
+   padding: 10px;
    font-family: arial;
    position: relative;
    min-height: 400px;
+  border: 1px solid #ffcd11;
  }
  
  .price {
@@ -28,11 +29,37 @@
    left: 0;
  }
  
- .card button:hover {
-   opacity: 0.7;
+ .cardhome:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border:none;
  }
 
- .container {
-  height: 100vh;
-  overflow-y: auto; /* Allow vertical scrolling */
+.cardhome img {
+  width: 100%;
+
+  height: auto;
+  /* or you can use percentages */
+}
+
+.cardhome p, h5{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;  
+}
+
+.describehome{  
+  background-color: #ffcd11;
+  position: absolute;
+  width: auto;
+  margin: 0;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  padding: 10px;
+}
+.describehome:hover{  
+  background-color: black;
+  transition: linear .25s;
+  color: #ffcd11;
+
 }
