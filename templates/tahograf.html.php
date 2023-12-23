@@ -7,13 +7,17 @@
             <div class="col-s-4 col-4">
                 <div class="cardhome">
                     <img src="/img/<?=trim($product['taho']->code)?>.jpg" alt="<?=$product['taho']->title?>" >
-                      <div id="myModal" class="modal">                        
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="img01">                        
-                        <div id="caption"></div>
+
+                     <div id="myModal" class="modal">
+                        <div class="modal-content-wrapper">
+                          <span class="close">&times;</span>
+                          <img class="modal-content" id="img01">
+                          <div id="caption"></div>
+                        </div>
                       </div>
+                    
                     <div class="describehome">
-                      <p> <?=$product['taho']->title?></p>               
+                      <p class="nowrap"> <?=$product['taho']->title?></p>               
                       <p>Cod: <?=$product['taho']->code?></p>
                       <p>Producator: <?=$product['producer']->name?> </p> 
                       <p><b>Pret: 

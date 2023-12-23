@@ -1,68 +1,81 @@
 <div class="col-s-12 col-12" >
-    <div style="height: 400px;">
+    <div>
         <?php include 'carousel.html.php'?>
         <script src="/myjs/carousel.js"></script>
     </div>
-   <div class="row"> 
+   <div class="row home"> 
         <div class="col-s-2 col-2" ></div>
             <div class="col-s-8 col-8 ">
-                <h2>Tahograf SRL - de afacere cu profesionistii.</h2>
+                <h1 style="text-align:center; background-color:red; color:white; padding:10px;margin:1px;">Tahograf SRL - de afacere cu profesionistii.</h1>
                 <a href="/tahografe">
                     <div class="col-s-4 col-4">
-                        <div class="cardhome">
-                            <img src="img/VDO logo.png" alt="VDO" style="width:100%">
+                        <div class="brandcard">
+                        <img src="img/VDO logo.png" alt="VDO" style="width:100%;">
+                            <div class="describebrand">
                             <h1>VDO</h1>                        
-                            <p>Toate lucrarile cu tahografele de toate tipurile.</p>
-                            <a href="/tahografe.php"><p><button>Mai multe</button></p></a>
+                            <p>Tahografe, montare, verificare.</p> 
+                            </div>                          
                         </div>
                     </div>
                 </a>
 
                 <a href="/heaters">
                 <div class="col-s-4 col-4">
-                    <div class="cardhome">
+                    <div class="brandcard">
                         <img src="img/logo stoneridge.gif" alt="stoneridge" style="width:100%">
-                        <h1>Stoneridge</h1>                        
-                        <p>Toate lucrarile cu tahografele de toate tipurile.</p>
-                        <a href="/tahografe.php"><p><button>Mai multe</button></p></a>
+                          <div class="describebrand">
+                            <h1>Stoneridge</h1>                        
+                            <p>Tahografe, montare, verificare.</p>
+                          </div>
+                        
                     </div>
                 </div>
                 </a>
 
                 <a href="/heaters">
                 <div class="col-s-4 col-4">
-                    <div class="cardhome">
+                    <div class="brandcard">
                         <img src="img/logo_eberspaecher.gif" alt="Eberspaecher" style="width:100%">
-                        <h1>Eberspaecher</h1>                        
-                        <p>Toate lucrarile cu tahografele de toate tipurile.</p>
-                        <p><button>Mai multe</button></p>
+                         <div class="describebrand">
+                            <h1>Eberspaecher</h1>                        
+                            <p>Incalzitoare, montare, reparate.</p>
+                         </div>
                     </div>
                 </div>
                 </a>
+                 <a href="/heaters">
                 <div class="col-s-4 col-4">
-                    <div class="cardhome">
-                        <img src="img/logo_webasto.gif" alt="Denim Jeans" style="width:100%">
-                        <h1>Webasto</h1>                        
-                        <p>Toate lucrarile cu incalzitoarele Webasto.</p>
-                        <p><button>Mai multe</button></p>
+                    <div class="brandcard">
+                        <img src="img/logo_webasto.gif" alt="Webasto" style="width:100%">
+                         <div class="describebrand">
+                            <h1>Webasto</h1>                        
+                            <p>Incalzitoare, montare, reparate.</p>
+                         </div>
                     </div>
                 </div>
+                 </a>
+                  <a href="/radioCb">
                 <div class="col-s-4 col-4">
-                    <div class="cardhome">
+                    <div class="brandcard">
                         <img src="img/barry_300.jpg" alt="CB radio" style="width:100%">
-                        <h1>CB Radio</h1>                        
-                        <p>Montare, vinzare, reparare.</p>
-                        <a href="tahografe.php"><p><button>Mai multe</button></p></a>
+                         <div class="describebrand">
+                            <h1>CB Radio</h1>                        
+                            <p>Montare, vinzare, reparare.</p>
+                         </div>                       
                     </div>
                 </div>
-                <div class="col-s-4 col-4">
-                    <div class="cardhome">
-                        <img src="img/kenwood.gif" alt="Professional radio" style="width:100%">
-                        <h1>Professional radio</h1>                        
-                        <p>Montare, vinzare, reparare.</p>
-                        <p><button>Mai multe</button></p>
-                    </div>
-                </div>
+                  </a>
+                   <a href="/radiovhfuhf">
+                        <div class="col-s-4 col-4">
+                            <div class="brandcard">
+                                <img src="img/kenwood.gif" alt="Professional radio" style="width:100%">
+                                <div class="describebrand">
+                                    <h1>KENWOOD</h1>                        
+                                    <p>Statii radio profesionale.</p>
+                                </div>                       
+                            </div>
+                        </div>
+                   </a>
                 
             </div>
         <div class="col-s-2 col-2" ></div>

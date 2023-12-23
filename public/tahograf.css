@@ -8,6 +8,10 @@
    min-height: 400px;
   border: 1px solid #ffcd11;
  }
+
+ .nowrap{
+  white-space: nowrap; text-overflow: ellipsis; overflow-x: hidden;
+ }
  
  .price {
    color: grey;
@@ -59,7 +63,36 @@
 }
 .describehome:hover{  
   background-color: black;
+  color:#ffcd11 ;
   transition: linear .25s;
-  color: #ffcd11;
-
 }
+
+.brandcard{
+    position: relative;
+    max-width: 300px;
+    margin: auto;
+    padding: 10px;
+    font-family: arial;    
+    height: 350px;
+    border: 1px solid #dddddd;
+    text-align: center;
+  }
+
+   .homea{
+    color: #333;
+    }
+  
+  .brandcard:hover{   
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.describebrand {  
+  position: absolute;
+  width: auto;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+}
+

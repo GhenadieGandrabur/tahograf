@@ -8,9 +8,11 @@
                 <div class="cardhome">
                     <img src="/img/<?=trim($product['taho']->code)?>.jpg" alt="<?=$product['taho']->title?>" >
                       <div id="myModal" class="modal">
-                        <span class="close">&times;</span>
-                        <img class="modal-content" id="img01">
-                        <div id="caption"></div>
+                        <div class="modal-content-wrapper">
+                          <span class="close">&times;</span>
+                          <img class="modal-content" id="img01">
+                          <div id="caption"></div>
+                        </div>
                       </div>
                     <div class="describehome">
                       <p style="white-space: nowrap; text-overflow: ellipsis; overflow-x: hidden;"> <?=$product['taho']->title?></p>               
