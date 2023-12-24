@@ -96,3 +96,17 @@
   padding: 10px;
 }
 
+.slogan{
+  text-align:center;
+  background-color:red;
+  color:white;
+  padding:10px;margin:1px;
+}
+
+ @media only screen and (max-width: 600px)
+  {
+    .mainslider{width: 100%;}
+    .slogan{width: 100%;font-size: 14px;}
+    footer{display:none}   
+  }
+

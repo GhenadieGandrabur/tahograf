@@ -14,20 +14,20 @@ footer {
    padding:20px 100px;
    
 }
-.footer p a{
+  footer  a{
    color:white;
    text-decoration: none;
    
 }
 
-.footer-content {
+footer-content {
    display: flex;
    justify-content: space-around;
    align-items: center;
    padding: 10px;
 }
 
-.footer-section {
+footer-section {
    margin: 5px;
 }
 
@@ -36,12 +36,12 @@ footer {
    padding: 0;
 }
 
-.footer-section ul li {
+footer-section ul li {
    display: inline;
    margin-right: 10px;
 }
 
-.footer-section ul li a {
+footer-section ul li a {
    color: white;
    text-decoration: none;
 }

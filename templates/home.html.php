@@ -1,12 +1,12 @@
 <div class="col-s-12 col-12" >
-    <div>
+    <div class="mainslider">
         <?php include 'carousel.html.php'?>
         <script src="/myjs/carousel.js"></script>
     </div>
    <div class="row home"> 
         <div class="col-s-2 col-2" ></div>
             <div class="col-s-8 col-8 ">
-                <h1 style="text-align:center; background-color:red; color:white; padding:10px;margin:1px;">Tahograf SRL - de afacere cu profesionistii.</h1>
+                <h1 class="slogan">Tahograf SRL - de afacere cu profesionistii.</h1>
                 <a href="/tahografe">
                     <div class="col-s-4 col-4">
                         <div class="brandcard">
