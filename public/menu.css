@@ -1,7 +1,8 @@
+
+
 .cap{
   display: none;
 }
-
 .navbar a:hover {
   background-color: white;
   color: red;
@@ -15,10 +16,10 @@
 .navbar a {
   text-decoration: none;
   padding: 14px 16px;
+  font-size: 17px;
   color: white;
   display: block;
   font-weight: bolder;
-  font-size: 17px;
 
 }
 
@@ -26,7 +27,11 @@
   width: 100%;
   display: flex;  
   align-items: center;
-  background-color:red;
+  background-color:#ff6600;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height:48px;
   
 }
 
@@ -48,7 +53,9 @@
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-  font-weight: bolder;  
+  font-weight: bolder; 
+  min-width: 160px; 
+  
 }
 
 /* Dropdown content */
@@ -67,7 +74,8 @@
 .dropdown-content a {
   float: none;
   color: black;
-  padding: 12px 16px;
+  padding: 14px 16px;
+  font-size: 17px;
   text-decoration: none;
   display: block;
   text-align: left;

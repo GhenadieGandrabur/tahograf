@@ -4,7 +4,7 @@
 </div>
 <div class="col-s-12 col-12" style="display:flex;">
 <div class="logo">
-  <a href="/"><img src="img/Taho-logo.PNG"></a>
+  <a href="/"><img src="img/Taho-logo.PNG" height="48"></a>
 </div>
 <div class="navbar" id="myNavbar">   
     <span class="menu">Menu</span>
