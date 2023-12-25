@@ -15,9 +15,9 @@
       </button>
       <div class="dropdown-content">
         <a href="/tahografe">Tahografe</a>
-        <a href="/heaters">Incalzitoare</a>
+        <a href="/heaters">Incalzitoare</a>       
         <a href="/radioCb">Radio CB</a>
-        <a href="/radiovhfuhf">Radio vhf/uhf</a>
+        <a href="/radiovhfuhf">Radio VHF/UHF</a>
       </div>
     </div>
     <div class="dropdown">
@@ -25,9 +25,10 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
+        <a href="/service">Tahografe</a>
+        <a href="#">Incalzitoare</a>
+        <a href="#">Radio</a>
+        <a href="#">Aer conditionat</a>
       </div>
     </div>
     <a href="/">Contacte</a>

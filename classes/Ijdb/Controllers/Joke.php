@@ -1,106 +1,112 @@
 <?php
 namespace Ijdb\Controllers;
-use \Ninja\DatabaseTable;
+
 use \Ninja\Authentication;
+use \Ninja\DatabaseTable;
 
-class Joke {
-	private $authorsTable;
-	private $jokesTable;
-	private $categoriesTable;
-	private $authentication;
+class Joke
+{
+    private $authorsTable;
+    private $jokesTable;
+    private $categoriesTable;
+    private $authentication;
 
-	public function __construct(DatabaseTable $jokesTable, DatabaseTable $authorsTable, DatabaseTable $categoriesTable, Authentication $authentication) {
-		$this->jokesTable = $jokesTable;
-		$this->authorsTable = $authorsTable;
-		$this->categoriesTable = $categoriesTable;
-		$this->authentication = $authentication;
-	}
+    public function __construct(DatabaseTable $jokesTable, DatabaseTable $authorsTable, DatabaseTable $categoriesTable, Authentication $authentication)
+    {
+        $this->jokesTable = $jokesTable;
+        $this->authorsTable = $authorsTable;
+        $this->categoriesTable = $categoriesTable;
+        $this->authentication = $authentication;
+    }
 
-	public function list() {
+    public function list()
+    {
 
-		if (isset($_GET['category']))
-		{
-			$category = $this->categoriesTable->findById($_GET['category']);
-			$jokes = $category->getJokes();
-		}
-		else
-		{
-			$jokes = $this->jokesTable->findAll();  
-		}		
+        if (isset($_GET['category'])) {
+            $category = $this->categoriesTable->findById($_GET['category']);
+            $kids = $category->getJokes();
+        } else {
+            $kids = $this->jokesTable->findAll();
+        }
 
-		$title = 'Joke list';
+        $title = 'Joke list';
 
-		$totalJokes = $this->jokesTable->total();
+        $totalJokes = $this->jokesTable->total();
 
-		$author = $this->authentication->getUser();
+        $author = $this->authentication->getUser();
 
-		return ['template' => 'jokes.html.php', 
-				'title' => $title, 
-				'variables' => [
-						'totalJokes' => $totalJokes,
-						'jokes' => $jokes,
-						'userId' => $author->id ?? null,
-						'categories' => $this->categoriesTable->findAll()
-					]
-				];
-	}
+        return ['template' => 'jokes.html.php',
+            'title' => $title,
+            'variables' => [
+                'totalJokes' => $totalJokes,
+                'kids' => $kids,
+                'userId' => $author->id ?? null,
+                'categories' => $this->categoriesTable->findAll(),
+            ],
+        ];
+    }
 
+    public function home()
+    {
+        $title = 'Internet Joke Database';
 
+        return ['template' => 'home.html.php', 'title' => $title];
+    }
 
-	public function delete() {
+    public function delete()
+    {
 
-		$author = $this->authentication->getUser();
+        $author = $this->authentication->getUser();
 
-		$joke = $this->jokesTable->findById($_POST['id']);
+        $kide = $this->jokesTable->findById($_POST['id']);
 
-		if ($joke->authorId != $author->id) {
-			return;
-		}
-		
+        if ($kide->authorId != $author->id) {
+            return;
+        }
 
-		$this->jokesTable->delete($_POST['id']);
+        $this->jokesTable->delete($_POST['id']);
 
-		header('location: /joke/list'); 
-	}
+        header('location: /joke/list');
+    }
 
-	public function saveEdit() {
-		$author = $this->authentication->getUser();
+    public function saveEdit()
+    {
+        $author = $this->authentication->getUser();
 
-		$joke = $_POST['joke'];
-		$joke['jokedate'] = new \DateTime();
+        $kids = $_POST['kids'];
 
-		$jokeEntity = $author->addJoke($joke);
+        $kids['jokedate'] = new \DateTime();
 
-		$jokeEntity->clearCategories();
+        $jokeEntity = $author->addJoke($kids);
 
-		foreach ($_POST['category'] as $categoryId) {
-			$jokeEntity->addCategory($categoryId);
-		}
+        $jokeEntity->clearCategories();
 
-		header('location: /joke/list'); 
-	}
+        foreach ($_POST['category'] as $categoryId) {
+            $jokeEntity->addCategory($categoryId);
+        }
 
-	public function edit() {
-		$author = $this->authentication->getUser();
-		$categories = $this->categoriesTable->findAll();
+        header('location: /joke/list');
+    }
 
-		if (isset($_GET['id'])) {
-			$joke = $this->jokesTable->findById($_GET['id']);
-		}
+    public function edit()
+    {
+        $author = $this->authentication->getUser();
+        $categories = $this->categoriesTable->findAll();
 
-		$title = 'Edit joke';
+        if (isset($_GET['id'])) {
+            $kids = $this->jokesTable->findById($_GET['id']);
+        }
 
-		return ['template' => 'editjoke.html.php',
-				'title' => $title,
-				'variables' => [
-						'joke' => $joke ?? null,
-						'userId' => $author->id ?? null,
-						'categories' => $categories
-					]
-				];
-	}
+        $title = 'Edit kids';
 
-	
+        return ['template' => 'editjoke.html.php',
+            'title' => $title,
+            'variables' => [
+                'kids' => $kids ?? null,
+                'userId' => $author->id ?? null,
+                'categories' => $categories,
+            ],
+        ];
+    }
 
-	
 }
