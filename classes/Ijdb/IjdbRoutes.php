@@ -87,6 +87,12 @@ class IjdbRoutes implements \Ninja\Routes {
 					'controller' => $serviceController,
 					'action' => 'list'
 				]
+				],
+			'contacte' => [
+				'GET' => [
+					'controller' => $serviceController,
+					'action' => 'contacte'
+				]
 			]
 		];
 

@@ -8,7 +8,7 @@
 </div>
 <div class="navbar" id="myNavbar">   
     <span class="menu">Menu</span>
-    <a href="/">Home</a>    
+    <a class="active" href="/">Home</a>    
     <div class="dropdown">
       <button class="dropbtn">Produse
         <i class="fa fa-caret-down"></i>
@@ -20,18 +20,10 @@
         <a href="/radiovhfuhf">Radio VHF/UHF</a>
       </div>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">Servicii
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="/service">Tahografe</a>
-        <a href="#">Incalzitoare</a>
-        <a href="#">Radio</a>
-        <a href="#">Aer conditionat</a>
-      </div>
-    </div>
-    <a href="/">Contacte</a>
+    
+    <a href="/service">Servicii</a>
+    
+    <a href="/contacte">Contacte</a>
     
     <div class="phone">
         <a href="tel:+37369113318"><i class="fa fa-mobile" style="font-size:20px"></i> +373 69113318</a>

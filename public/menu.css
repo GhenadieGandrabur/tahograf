@@ -5,11 +5,11 @@
 }
 .navbar a:hover {
   background-color: white;
-  color: #ff6600;
+  color: black;
 }
 .dropdown .dropbtn:hover {
   background-color: white;
-  color:#ff6600;
+  color:black;
 }
 
 /* Basic styling */
@@ -23,11 +23,16 @@
 
 }
 
+.active {
+  background-color: #04AA6D;
+}
+
 .navbar {
   width: 100%;
   display: flex;  
   align-items: center;
-  background-color:#ff6600;
+  /* background-color:#ff6600; */
+  background-color: #333;
   overflow: hidden;
   margin: 0;
   padding: 0;

@@ -20,5 +20,15 @@ class Service {
 						'services' => $services,						
 					]
 				];
-	}	
+	}
+
+
+	public function contacte()
+	{
+		$title = 'Contacte';
+
+		return ['template' => 'contacte.html.php', 'title' => $title];
+	}
+
+
 }

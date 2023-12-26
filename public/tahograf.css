@@ -97,10 +97,15 @@
 }
 
 .slogan{
+  font-family:'Crimson Text Semibold Italic';
+  font-size: 30px;
   text-align:center;
-  background-color:red;
+  text-shadow: 2px 2px black;
+  /* background-color:red; */
+   background-image: linear-gradient(to right, red , yellow);
   color:white;
   padding:10px;margin:1px;
+  border-radius: 50px 0px;
 }
 
  @media only screen and (max-width: 600px)
@@ -116,3 +121,27 @@
   .b{
     border: 1px solid;
   }
+  .tc{
+    text-align: center;
+  }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+  
+    th,
+    td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .service img{
+      text-align: center;
+    }
+    .p1{
+      padding: 10px;
+    }
+    .contacte tr:hover{
+      background-color: #dddddd;
+    }
