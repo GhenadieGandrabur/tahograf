@@ -110,3 +110,9 @@
     footer{display:none}   
   }
 
+  th{
+    text-align: left;
+  }
+  .b{
+    border: 1px solid;
+  }
