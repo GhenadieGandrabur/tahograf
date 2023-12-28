@@ -2,7 +2,11 @@ html,body {
    height: 100%;
    margin: 0;
    padding: 0;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
   
+ }
+ p a{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
  }
  body {
    display: flex;

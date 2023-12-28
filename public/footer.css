@@ -16,8 +16,10 @@ footer {
 }
   footer  a{
    color:white;
-   text-decoration: none;
-   
+   text-decoration: none;   
+}
+  footer  a:hover{
+ border-bottom: 3px solid white; 
 }
 
 footer-content {
@@ -39,6 +41,9 @@ footer-section {
 footer-section ul li {
    display: inline;
    margin-right: 10px;
+}
+footer h4{
+  text-decoration: underline;
 }
 
 footer-section ul li a {
