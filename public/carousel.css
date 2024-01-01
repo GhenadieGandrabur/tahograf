@@ -1,25 +1,26 @@
-#carousel {
+.mainslider{
    position: relative;
-   width: 100%;
-   margin: auto;
    overflow: hidden;
+   height: auto;
+    
 }
-
-.carousel-slides {
-   display: flex;
-   width: 100%; /* Adjust based on the number of slides (e.g., 3 slides = 300%) */
-}
-
-.slide {
-   width: 100%; /* 100% of the carousel container */
-   flex: 0 0 auto; /* Prevent flexbox from shrinking or growing the slides */
-}
-
 .slide img {
-   width: 100%;
+   width: 100%;  
+   height: auto;
    display: block;
 }
+.carousel-slides .slide {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   opacity: 0;
+   transition: opacity 2s ease;
+}
+
+.carousel-slides .slide.active {
+   opacity: 1;
+} 
 
 
-.prev { left: 0; }
-.next { right: 0; }

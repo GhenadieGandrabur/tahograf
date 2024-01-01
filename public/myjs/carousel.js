@@ -1,16 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     let index = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
-    let interval = 3000;
+    let interval = 3000; // Time interval
 
     function updateCarousel() {
-        const newMarginLeft = index * -100;
-        document.querySelector('.carousel-slides').style.marginLeft = newMarginLeft + '%';
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
     }
 
     function startAutoSlide() {
-        return setInterval(function() {
+        return setInterval(function () {
             index = (index + 1) % totalSlides;
             updateCarousel();
         }, interval);
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let autoSlide = startAutoSlide();
 
-    document.querySelector('.prev').addEventListener('click', function() {
+    document.querySelector('.prev').addEventListener('click', function () {
         index = (index - 1 + totalSlides) % totalSlides;
         updateCarousel();
         restartAutoSlide();
     });
 
-    document.querySelector('.next').addEventListener('click', function() {
+    document.querySelector('.next').addEventListener('click', function () {
         index = (index + 1) % totalSlides;
         updateCarousel();
         restartAutoSlide();
@@ -35,3 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
         autoSlide = startAutoSlide();
     }
 });
+
+function updateMainSliderHeight() {
+    const slider = document.querySelector('.mainslider');
+    let maxHeight = 0;
+
+    slider.querySelectorAll('.slide img').forEach(img => {
+        if (img.offsetHeight > maxHeight) {
+            maxHeight = img.offsetHeight;
+        }
+    });
+
+    slider.style.height = maxHeight + 'px';
+}
+
+document.addEventListener('DOMContentLoaded', updateMainSliderHeight);
+window.addEventListener('resize', updateMainSliderHeight);
