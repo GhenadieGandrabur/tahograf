@@ -2,8 +2,6 @@
   <div class="col-s-2 col-2"></div>
   <div class="col-s-8 col-8 ">
   <?php include __DIR__."/../includes/advertising.php" ?>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
     <h2>Tahografe si accesorii</h2>
     <?php foreach ($allproducts as $product) : ?>
       <?php if ($product['taho']->category_id == 1) : ?>
@@ -37,7 +35,8 @@
         </div>
       <?php endif; ?>
     <?php endforeach; ?>
+    <?php include __DIR__."/../includes/advertising.php" ?>
   </div>
+  <div class="col-s-2 col-2"></div>
 </div>
 <script src="/myjs/modal.js"></script>
-<?php include __DIR__."/../includes/advertising.php" ?>
