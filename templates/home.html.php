@@ -6,10 +6,7 @@
     <div class="row home">
         <div class="col-s-2 col-2"></div>
         <div class="col-s-8 col-8 ">
-            <div class="tc">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7188583604227224"
-            crossorigin="anonymous"></script>
-            </div>
+           <?php include __DIR__."/../includes/advertising.php" ?>
             <!-- Tahograf header -->
             <ins class="adsbygoogle"
             style="display:inline-block;width:100%;height:90px"

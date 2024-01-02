@@ -1,14 +1,7 @@
 <div class="row">
   <div class="col-s-2 col-2"></div>
   <div class="col-s-8 col-8 ">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7188583604227224"
-     crossorigin="anonymous"></script>
-<!-- Tahograf header -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-7188583604227224"
-     data-ad-slot="6541643188"></ins>
-<script>
+  <?php include __DIR__."/../includes/advertising.php" ?>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
     <h2>Tahografe si accesorii</h2>
