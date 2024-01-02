@@ -1,5 +1,5 @@
  <div class="cap">
-  <a href="/"><img src="/img/Taho-logo.png"></a>
+  <a href="/"><img src="/img/taho-logo.png"></a>
   <a href="tel:+37369113318"><i class="fa fa-mobile" style="font-size:20px"></i> +373 69113318</a>
 </div>
 <div class="col-s-12 col-12" style="display:flex;">
