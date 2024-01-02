@@ -30,7 +30,7 @@
       </div>
       <div class="col-s-12 col-12">
         <hr>
-        CUBIT <?= date('Y')?>
+        © CUBIT <?= date('Y')?>
       </div>
 
     </footer>
