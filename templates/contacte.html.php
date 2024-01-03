@@ -1,17 +1,12 @@
 <div class="row">
-  <div style="width: 100%; height:auto;padding:10px; text-align:center">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7188583604227224" crossorigin="anonymous"></script>
-    <!-- Tahograf header -->
-    <ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-7188583604227224" data-ad-slot="6541643188"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+
   </div>
   <div class="col-s-12 col-12">
     <div class="col-s-2 col-2 ">
 
     </div>
     <div class="col-s-8 col-8 ">
+    <?php include __DIR__."/../includes/advertising.php" ?>
       <div class="col-s-12 col-12 ">
 
 
@@ -89,6 +84,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1359.2615049575143!2d28.824586126487084!3d47.04958990953318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x40c97d0f6b5af41f%3A0x7b4c385f090ed1f8!2sTahograf%20SRL%2C%20Petricani%20St%2094%2C%20Chi%C8%99in%C4%83u%2C%20Moldova!3m2!1d47.0498629!2d28.825551899999997!5e0!3m2!1sen!2s!4v1703579204209!5m2!1sen!2s" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
+        <?php include __DIR__."/../includes/advertising.php" ?>
       </div>
 
 
