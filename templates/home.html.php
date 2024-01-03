@@ -1,10 +1,14 @@
 <div class="col-s-12 col-12">  
+
     <div class="mainslider">
         <?php include 'carousel.html.php' ?>
         <script src="/myjs/carousel.js"></script>
-    </div>   
+    </div> 
+
     <div class="row home">
+
         <div class="col-s-2 col-2"></div>
+
         <div class="col-s-8 col-8 ">
            <?php include __DIR__."/../includes/advertising.php" ?>
             <!-- Tahograf header -->
@@ -85,9 +89,11 @@
                     </div>
                 </div>
             </a>
-
-            <?php include __DIR__."/../includes/advertising.php" ?>
+   
         </div>
-        <div class="col-s-2 col-2"></div>
+            <?php include __DIR__ . "/../includes/advertising.php"?>
     </div>
+    <div class="col-s-2 col-2"></div>
 </div>
+
+
