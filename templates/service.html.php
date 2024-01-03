@@ -42,6 +42,7 @@
 
           <div class="col-s-6 col-6 ">
             <h2>Incalzitoare</h2>
+            
             <table>
               <tr>
                 <th>Code</th>
