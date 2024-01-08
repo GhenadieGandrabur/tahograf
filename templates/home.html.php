@@ -11,7 +11,7 @@
 
         <div class="col-s-8 col-8 ">
            <?php include __DIR__."/../includes/advertising.php" ?>
-            <!-- Tahograf header -->
+            <!-- Tahograf header + slider -->
             <ins class="adsbygoogle"
             style="display:inline-block;width:100%;height:90px"
             data-ad-client="ca-pub-7188583604227224"

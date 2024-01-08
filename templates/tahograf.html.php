@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row">  
   <div class="col-s-2 col-2"></div>
   <div class="col-s-8 col-8 ">
   <?php include __DIR__."/../includes/advertising.php" ?>
