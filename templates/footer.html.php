@@ -29,7 +29,7 @@
       </div>
       </div>
       <div class="col-s-12 col-12">
-        <hr>
+      
         © CUBIT <?= date('Y')?>
       </div>
 

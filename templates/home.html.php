@@ -32,7 +32,7 @@
                 </div>
             </a>
 
-            <a href="/heaters">
+            <a href="/tahografe">
                 <div class="col-s-4 col-4">
                     <div class="brandcard">
                         <img src="img/logo stoneridge.gif" alt="stoneridge" style="width:100%">
@@ -88,8 +88,7 @@
                         </div>
                     </div>
                 </div>
-            </a>
-   
+            </a>   
         </div>
             <?php include __DIR__ . "/../includes/advertising.php"?>
     </div>

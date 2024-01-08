@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let index = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
-    let interval = 3000; // Time interval
+    let interval = 3000;    
+    if (slides.length > 0) {
+        slides[0].classList.add('active');
+    }
 
     function updateCarousel() {
         slides.forEach(slide => slide.classList.remove('active'));
