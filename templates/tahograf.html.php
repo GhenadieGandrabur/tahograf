@@ -4,10 +4,10 @@
   <?php include __DIR__."/../includes/advertising.php" ?>
     <h2>Tahografe si accesorii</h2>
     <?php foreach ($allproducts as $product) : ?>
-      <?php if ($product['taho']->category_id == 1) : ?>
+   
         <div class="col-s-4 col-4">
           <div class="cardhome">
-            <img src="/img/<?= trim($product['taho']->code) ?>.jpg" alt="<?= $product['taho']->title ?>">
+            <img src="/img/<?= trim($product->code) ?>.jpg" alt="<?= $product->title ?>">
 
             <div id="myModal" class="modal">
               <div class="modal-content-wrapper">
@@ -18,13 +18,13 @@
             </div>
 
             <div class="describehome">
-              <p class="nowrap"> <?= $product['taho']->title ?></p>
-              <p>Cod: <?= $product['taho']->code ?></p>
-              <p>Producator: <?= $product['producer']->name ?> </p>
+              <p class="nowrap"> <?= $product->title ?></p>
+              <p>Cod: <?= $product->code ?></p>
+              <p>Producator: <?= $product->producer_name ?> </p>
               <p><b>Pret:
                   <?php
-                  if (!empty($product['taho']->price)) {
-                    echo   $product['taho']->price . ' lei TVA inclus.';
+                  if (!empty($product->price)) {
+                    echo   $product->price . ' lei TVA inclus.';
                   } else {
                     echo  '-';
                   }
@@ -33,8 +33,13 @@
             </div>
           </div>
         </div>
-      <?php endif; ?>
+     
     <?php endforeach; ?>
+  </div>
+  <div class="pager">
+    <?php for($i = 0; $i < $totalPages; $i++): ?>
+      <a style="border:1px solid; padding:10px; margin:2px;" href="/tahografe?page=<?=$i?>"><?=$i+1?></a>
+    <?php endfor; ?>
   </div>
   <div class="col-s-2 col-2"></div>
 </div>

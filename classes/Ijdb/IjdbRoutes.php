@@ -14,6 +14,7 @@ use Ijdb\Repositories\ReportRepository;
 use Ninja\Authentication;
 use Ninja\DatabaseTable;
 use Ijdb\Repositories\AuthorRepository;
+use Ijdb\Repositories\ProductRepository;
 use Ijdb\Services\EmailService;
 use Ijdb\Services\AuthorService;
 
@@ -38,7 +39,7 @@ class IjdbRoutes implements \Ninja\Routes {
 		$this->jokeCategoriesTable = new \Ninja\DatabaseTable($pdo, 'joke_category', 'categoryId');
 		$this->authentication = new \Ninja\Authentication($this->authorsTable, 'email', 'password');
 
- 		$this->tahoTable = new \Ninja\DatabaseTable($pdo, 'products', 'catigory_id');
+ 		$this->tahoTable = new ProductRepository($pdo, 'products', 'catigory_id');
  		$this->producerTable = new \Ninja\DatabaseTable($pdo, 'producers', 'id');
  		$this->serviceTable = new \Ninja\DatabaseTable($pdo, 'service', 'id');
 	}

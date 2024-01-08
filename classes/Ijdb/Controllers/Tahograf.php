@@ -1,5 +1,7 @@
 <?php
 namespace Ijdb\Controllers;
+
+use Ijdb\Repositories\ProductRepository;
 use \Ninja\DatabaseTable;
 
 class Tahograf
@@ -7,7 +9,7 @@ class Tahograf
 	private $tahoTable;
 	private $producerTable;
    
-	public function __construct(DatabaseTable $tahoTable, DatabaseTable $producerTable) {
+	public function __construct(ProductRepository $tahoTable, DatabaseTable $producerTable) {
 		$this->tahoTable = $tahoTable;		
 		$this->producerTable = $producerTable;		
 	} 
@@ -18,16 +20,8 @@ class Tahograf
 	}
 
 	public function tahograf() {
-		$tahos = $this->tahoTable->findAll();
-		$allproducts = []; 
-		foreach ($tahos as $taho) {
-			 $producer = $this->producerTable->findById($taho->producer_id);			 
-			 $allproducts[] = [
-				  'taho' => $taho,
-				  'producer' => $producer
-			 ];
-		}
-  
+		$tahos = $this->tahoTable->findAllProducts(1,intval($_GET['page']??0)*9);
+			
 		$title = 'Tahograf';
 		$totalTaho = $this->tahoTable->total();
   
@@ -36,7 +30,8 @@ class Tahograf
 			 'title' => $title,
 			 'variables' => [
 				  'totalTaho' => $totalTaho,
-				  'allproducts' => $allproducts,
+				  'allproducts' => $tahos,
+				  'totalPages' => ceil($this->tahoTable->totalProducts(1) /9)
 			 ]
 		];
   }

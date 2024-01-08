@@ -16,7 +16,7 @@ class DatabaseTable {
 		$this->constructorArgs = $constructorArgs;
 	}
 
-	private function query($sql, $parameters = []) {
+	protected function query($sql, $parameters = []) {
 		$query = $this->pdo->prepare($sql);
 		$query->execute($parameters);
 		return $query;
