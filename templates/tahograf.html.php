@@ -35,8 +35,8 @@
         </div>
       <?php endif; ?>
     <?php endforeach; ?>
-    <?php include __DIR__."/../includes/advertising.php" ?>
   </div>
   <div class="col-s-2 col-2"></div>
 </div>
+<?php include __DIR__."/../includes/advertising.php" ?>
 <script src="/myjs/modal.js"></script>
