@@ -145,3 +145,30 @@
     .contacte tr:hover{
       background-color: #dddddd;
     }
+
+  .pager{
+    padding: 40px 0 ;
+    text-align: center;
+    clear: both;
+  }
+
+.pager a{ 
+  padding:0 10px;
+  margin:2px;
+  line-height: 40px;
+  text-decoration: none;
+  display:inline-block;
+  background-color: #f8f9fa; 
+  border: 1px solid #ddd; 
+  color: #007bff;
+}
+
+.pager a:hover {
+  background-color: #007bff; 
+  color: #ffffff; 
+}
+
+.pager .active {
+  background-color: #0056b3; 
+  color: #ffffff;
+}

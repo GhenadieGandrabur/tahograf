@@ -14,7 +14,7 @@ class ProductRepository extends DatabaseTable
             WHERE 
             p.category_id=$categoryId 
             ORDER BY p.$sort
-            LIMIT $page, 9")->fetchAll(\PDO::FETCH_OBJ);
+            LIMIT $page, 12")->fetchAll(\PDO::FETCH_OBJ);
     }
 
     public function totalProducts($categoryId) {

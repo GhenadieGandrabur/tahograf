@@ -1,8 +1,11 @@
-<div class="row">  
+<div >  
   <div class="col-s-2 col-2"></div>
+
   <div class="col-s-8 col-8 ">
+    
   <?php include __DIR__."/../includes/advertising.php" ?>
-    <h2>Tahografe si accesorii</h2>
+    <h2><?=$title?></h2>
+    <div>
     <?php foreach ($allproducts as $product) : ?>
    
         <div class="col-s-4 col-4">
@@ -35,13 +38,19 @@
         </div>
      
     <?php endforeach; ?>
-  </div>
-  <div class="pager">
+    </div>
+    <div class="pager">
     <?php for($i = 0; $i < $totalPages; $i++): ?>
-      <a style="border:1px solid; padding:10px; margin:2px;" href="/tahografe?page=<?=$i?>"><?=$i+1?></a>
-    <?php endfor; ?>
+      <a class="<?=(($_GET['page']??0)==$i) ? 'active' : ''?>" href="/<?=$url?>?page=<?=$i?>"><?=$i+1?></a>
+      <?php endfor; ?>
+    </div>
   </div>
-  <div class="col-s-2 col-2"></div>
-</div>
-<?php include __DIR__."/../includes/advertising.php" ?>
+  </div>
+    <div class="col-s-2 col-2"></div>
+  </div>
+  
+  
+  
+
+<!-- <?php include __DIR__."/../includes/advertising.php" ?> -->
 <script src="/myjs/modal.js"></script>
