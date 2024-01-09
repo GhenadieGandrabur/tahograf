@@ -154,21 +154,24 @@
 
 .pager a{ 
   padding:0 10px;
-  margin:2px;
+  margin-right:1px;
   line-height: 40px;
   text-decoration: none;
   display:inline-block;
-  background-color: #f8f9fa; 
-  border: 1px solid #ddd; 
-  color: #007bff;
+  background-color: #ffcd11; 
+  border: 2px solid black; 
+  color: black;
+  border-radius: 5px;
 }
 
 .pager a:hover {
-  background-color: #007bff; 
-  color: #ffffff; 
+  background-color: black; 
+  color: #ffcd11; 
+  border: 2px solid #ffcd11;
 }
 
 .pager .active {
-  background-color: #0056b3; 
-  color: #ffffff;
+  background-color: black; 
+  color: #ffcd11;
+  border: 2px solid #ffcd11;
 }
