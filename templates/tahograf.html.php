@@ -1,32 +1,41 @@
-<div >  
+<div>
   <div class="col-s-2 col-2"></div>
 
   <div class="col-s-8 col-8 ">
-    
-  <?php include __DIR__."/../includes/advertising.php" ?>
-    <h2 style="margin-left: 20px;"><?=$title?></h2>
-    <form id="sortform">
-      <lable>Sort by:</lable>
-        <select onchange="document.getElementById('sortform').submit()" name="sort">
-          <option value="title" <?=($sort === 'title')?'selected checked': ''?>>Titlu</option>
-          <option value="price" <?=($sort === 'price')?'selected checked': ''?>>Pret</option>
-          <option value="producer_id" <?=($sort === 'producer_id')?'selected checked': ''?>>Producator</option>
-        </select>
-    </form>
-    <form id="searchform">
-      <input type="hidden" name="page" value="0">
-      <input type="hidden" name="sort" value="<?=$sort?>">
-      <input type="text" name="search">
-      <input type="submit" value="🔎">
-    </form>
+
+    <?php include __DIR__ . "/../includes/advertising.php" ?>
+    <div class="flex">
+      <h2 style="margin-left: 20px;"><?= $title ?></h2>
+
+      <div class="searchbar">
+        <form id="searchform">
+          <input type="hidden" name="page" value="0">
+          <input type="hidden" name="sort" value="<?= $sort ?>">
+          <div class="input-wrapper">
+            <input type="text" name="search" class="input-text" placeholder="cautare">
+            <input type="submit" value="🔎" class="input-submit">
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="flex">
     <div class="pager">
-    <?php for($i = 0; $i < $totalPages; $i++): ?>
-      <a class="<?=(($_GET['page']??0)==$i) ? 'active' : ''?>" href="/<?=$url?>?sort=<?=$sort?>&page=<?=$i?>"><?=$i+1?></a>
-      <?php endfor; ?>
+        <?php for ($i = 0; $i < $totalPages; $i++) : ?>
+          <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&page=<?= $i ?>"><?= $i + 1 ?></a>
+        <?php endfor; ?>
+      </div>
+      <form id="sortform">
+        <lable>Sort by:</lable>
+        <select onchange="document.getElementById('sortform').submit()" name="sort">
+          <option value="title" <?= ($sort === 'title') ? 'selected checked' : '' ?>>Titlu</option>
+          <option value="price" <?= ($sort === 'price') ? 'selected checked' : '' ?>>Pret</option>
+          <option value="producer_id" <?= ($sort === 'producer_id') ? 'selected checked' : '' ?>>Producator</option>
+        </select>
+      </form>     
     </div>
     <div>
-    <?php foreach ($allproducts as $product) : ?>
-   
+      <?php foreach ($allproducts as $product) : ?>
+
         <div class="col-s-3 col-3">
           <div class="cardhome">
             <img src="/img/<?= trim($product->code) ?>.jpg" alt="<?= $product->title ?>">
@@ -55,21 +64,21 @@
             </div>
           </div>
         </div>
-     
-    <?php endforeach; ?>
+
+      <?php endforeach; ?>
     </div>
     <div class="pager">
-    <?php for($i = 0; $i < $totalPages; $i++): ?>
-      <a class="<?=(($_GET['page']??0)==$i) ? 'active' : ''?>" href="/<?=$url?>?sort=<?=$sort?>&page=<?=$i?>"><?=$i+1?></a>
+      <?php for ($i = 0; $i < $totalPages; $i++) : ?>
+        <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&page=<?= $i ?>"><?= $i + 1 ?></a>
       <?php endfor; ?>
     </div>
   </div>
-  </div>
-    <div class="col-s-2 col-2"></div>
-  </div>
-  
-  
-  
+</div>
+<div class="col-s-2 col-2"></div>
+</div>
 
-<!-- <?php include __DIR__."/../includes/advertising.php" ?> -->
+
+
+
+<!-- <?php include __DIR__ . "/../includes/advertising.php" ?> -->
 <script src="/myjs/modal.js"></script>

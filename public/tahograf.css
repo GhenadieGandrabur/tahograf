@@ -161,7 +161,7 @@
   /* background-color: #dddddd;  */
   /* border: 1px solid black;  */
   color: black;
-  border-radius: 3px; */
+  border-radius: 3px; 
 }
 
 .pager a:hover {
@@ -174,4 +174,38 @@
   background-color: #666; 
   color: #dddddd;
   border: 1px solid black;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.searchbar .input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.searchbar .input-text {
+  padding: 3px;
+  padding-right: 30px; 
+  box-sizing: border-box;
+}
+
+.searchbar .input-submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.searchbar .input-submit {
+  height: 100%;
+  padding: 0 5px;
+}
+
+
 }
