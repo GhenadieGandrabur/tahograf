@@ -28,7 +28,7 @@
             <div class="describehome">
               <p class="nowrap"> <?= $product->title ?></p>
               <p>Cod: <?= $product->code ?></p>
-              <p>Producator: <?= $product->producer_name ?> </p>
+              <p class="nowrap">Producator: <?= $product->producer_name ?> </p>
               <p><b>Pret:
                   <?php
                   if (!empty($product->price)) {
