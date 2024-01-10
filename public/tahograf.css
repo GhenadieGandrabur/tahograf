@@ -147,20 +147,21 @@
     }
 
   .pager{
-    padding: 30px 0 ;
-    text-align: center;
+    margin-left: 20px;
+    padding: 10px 0 ;
+    /* border: 1px solid; */
     clear: both;
   }
 
 .pager a{ 
-  padding:0 10px;  
-  line-height: 40px;
+  padding:0 5px;  
+  line-height: 20px;
   text-decoration: none;
   display:inline-block;
-  background-color: #dddddd; 
-  border: 1px solid black; 
+  /* background-color: #dddddd;  */
+  /* border: 1px solid black;  */
   color: black;
-  border-radius: 5px;
+  border-radius: 3px; */
 }
 
 .pager a:hover {

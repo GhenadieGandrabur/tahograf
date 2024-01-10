@@ -4,7 +4,12 @@
   <div class="col-s-8 col-8 ">
     
   <?php include __DIR__."/../includes/advertising.php" ?>
-    <h2><?=$title?></h2>
+    <h2 style="margin-left: 20px;"><?=$title?></h2>
+    <div class="pager">
+    <?php for($i = 0; $i < $totalPages; $i++): ?>
+      <a class="<?=(($_GET['page']??0)==$i) ? 'active' : ''?>" href="/<?=$url?>?page=<?=$i?>"><?=$i+1?></a>
+      <?php endfor; ?>
+    </div>
     <div>
     <?php foreach ($allproducts as $product) : ?>
    
