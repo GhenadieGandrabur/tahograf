@@ -13,7 +13,7 @@
     <div>
     <?php foreach ($allproducts as $product) : ?>
    
-        <div class="col-s-4 col-4">
+        <div class="col-s-3 col-3">
           <div class="cardhome">
             <img src="/img/<?= trim($product->code) ?>.jpg" alt="<?= $product->title ?>">
 
