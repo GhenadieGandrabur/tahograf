@@ -5,9 +5,23 @@
     
   <?php include __DIR__."/../includes/advertising.php" ?>
     <h2 style="margin-left: 20px;"><?=$title?></h2>
+    <form id="sortform">
+      <lable>Sort by:</lable>
+        <select onchange="document.getElementById('sortform').submit()" name="sort">
+          <option value="title" <?=($sort === 'title')?'selected checked': ''?>>Titlu</option>
+          <option value="price" <?=($sort === 'price')?'selected checked': ''?>>Pret</option>
+          <option value="producer_id" <?=($sort === 'producer_id')?'selected checked': ''?>>Producator</option>
+        </select>
+    </form>
+    <form id="searchform">
+      <input type="hidden" name="page" value="0">
+      <input type="hidden" name="sort" value="<?=$sort?>">
+      <input type="text" name="search">
+      <input type="submit" value="🔎">
+    </form>
     <div class="pager">
     <?php for($i = 0; $i < $totalPages; $i++): ?>
-      <a class="<?=(($_GET['page']??0)==$i) ? 'active' : ''?>" href="/<?=$url?>?page=<?=$i?>"><?=$i+1?></a>
+      <a class="<?=(($_GET['page']??0)==$i) ? 'active' : ''?>" href="/<?=$url?>?sort=<?=$sort?>&page=<?=$i?>"><?=$i+1?></a>
       <?php endfor; ?>
     </div>
     <div>
@@ -46,7 +60,7 @@
     </div>
     <div class="pager">
     <?php for($i = 0; $i < $totalPages; $i++): ?>
-      <a class="<?=(($_GET['page']??0)==$i) ? 'active' : ''?>" href="/<?=$url?>?page=<?=$i?>"><?=$i+1?></a>
+      <a class="<?=(($_GET['page']??0)==$i) ? 'active' : ''?>" href="/<?=$url?>?sort=<?=$sort?>&page=<?=$i?>"><?=$i+1?></a>
       <?php endfor; ?>
     </div>
   </div>

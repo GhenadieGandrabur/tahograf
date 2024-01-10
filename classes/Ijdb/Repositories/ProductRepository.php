@@ -4,7 +4,7 @@ use \Ninja\DatabaseTable;
 
 class ProductRepository extends DatabaseTable
 {
-    public function findAllProducts($categoryId, $page = 0, $sort = 'title' )
+    public function findAllProducts($categoryId, $page = 0, $sort = 'title', $search = '' )
     {
         return $this->query("SELECT 
             p.*,
@@ -13,6 +13,7 @@ class ProductRepository extends DatabaseTable
             LEFT JOIN `producers` pr ON p.producer_id=pr.id
             WHERE 
             p.category_id=$categoryId 
+            AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
             ORDER BY p.$sort
             LIMIT $page, 12")->fetchAll(\PDO::FETCH_OBJ);
     }

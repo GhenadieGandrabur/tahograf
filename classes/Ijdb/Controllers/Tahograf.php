@@ -20,7 +20,9 @@ class Tahograf
 	}
 
 	public function tahograf() {
-		$tahos = $this->tahoTable->findAllProducts(1,intval($_GET['page']??0)*12);
+		$sort=htmlspecialchars($_GET['sort']??'title');
+		$search=htmlspecialchars($_GET['search']??'');
+		$tahos = $this->tahoTable->findAllProducts(1, intval($_GET['page'] ?? 0) * 12, $sort, $search);
 			
 		$title = 'Tahograf';
 		$totalTaho = $this->tahoTable->total();
@@ -30,6 +32,7 @@ class Tahograf
 			 'title' => $title,
 			 'variables' => [
 				  'title' => 'Tahografe si accesorii',
+				  'sort' => $sort, 
 				  'url' => 'tahografe',
 				  'totalTaho' => $totalTaho,
 				  'allproducts' => $tahos,
@@ -42,7 +45,8 @@ class Tahograf
   
 
 	public function heaters() {
-		$tahos = $this->tahoTable->findAllProducts(2,intval($_GET['page']??0)*12);
+		$sort=htmlspecialchars($_GET['sort']??'title');
+		$tahos = $this->tahoTable->findAllProducts(2, intval($_GET['page'] ?? 0) * 12, $sort);
 			
 		$title = 'Heaters';
 		$totalTaho = $this->tahoTable->total();
@@ -52,6 +56,7 @@ class Tahograf
 			 'title' => $title,
 			 'variables' => [
 				'title' => 'Incalzitoare si piese',
+				'sort' => $sort, 
 				  'url' => 'heaters',
 				  'totalTaho' => $totalTaho,
 				  'allproducts' => $tahos,
@@ -61,7 +66,8 @@ class Tahograf
 	}
 
 	public function radioCb() {
-		$tahos = $this->tahoTable->findAllProducts(3,intval($_GET['page']??0)*12);
+		$sort=htmlspecialchars($_GET['sort']??'title');
+		$tahos = $this->tahoTable->findAllProducts(3, intval($_GET['page'] ?? 0) * 12, $sort);
 			
 		$title = 'Radio CB';
 		$totalTaho = $this->tahoTable->total();
@@ -71,6 +77,7 @@ class Tahograf
 			 'title' => $title,
 			 'variables' => [
 				  'title' => 'Statii radio CB',
+				  'sort' => $sort, 
 				  'url' => 'radiocb',
 				  'totalTaho' => $totalTaho,
 				  'allproducts' => $tahos,
@@ -80,7 +87,8 @@ class Tahograf
 	}
 
 	public function radiovhfuhf(){
-		$tahos = $this->tahoTable->findAllProducts(4,intval($_GET['page']??0)*12);
+		$sort=htmlspecialchars($_GET['sort']??'title');
+		$tahos = $this->tahoTable->findAllProducts(4, intval($_GET['page'] ?? 0) * 12, $sort);
 			
 		$title = 'Radio VHF/UHF';
 		$totalTaho = $this->tahoTable->total();
@@ -90,6 +98,7 @@ class Tahograf
 			 'title' => $title,
 			 'variables' => [
 				  'title' => 'Statii VHF/UHF',
+				  'sort' => $sort, 
 				  'url' => 'radiovhfuhf',
 				  'totalTaho' => $totalTaho,
 				  'allproducts' => $tahos,
