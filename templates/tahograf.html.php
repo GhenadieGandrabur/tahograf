@@ -1,5 +1,6 @@
 <div>
-  <div class="col-s-2 col-2"></div>
+  <div class="col-s-2 col-2"><?php include __DIR__ . "/../includes/advertising.php"?>
+</div>
 
   <div class="col-s-8 col-8 ">
 
@@ -25,9 +26,9 @@
         <?php endfor; ?>
       </div>
       <form id="sortform">
-        <lable>Sort by:</lable>
-        <select onchange="document.getElementById('sortform').submit()" name="sort">
-          <option value="title" <?= ($sort === 'title') ? 'selected checked' : '' ?>>Titlu</option>
+        <lable>Sortare dupa:</lable>
+        <select onchange="document.getElementById('sortform').submit()" name="sort" style="padding:5px ;">
+          <option value="title" <?= ($sort === 'title') ? 'selected checked' : '' ?>>Denumire</option>
           <option value="price" <?= ($sort === 'price') ? 'selected checked' : '' ?>>Pret</option>
           <option value="producer_id" <?= ($sort === 'producer_id') ? 'selected checked' : '' ?>>Producator</option>
         </select>
@@ -80,5 +81,5 @@
 
 
 
-<!-- <?php include __DIR__ . "/../includes/advertising.php" ?> -->
+ <?php include __DIR__ . "/../includes/advertising.php" ?> 
 <script src="/myjs/modal.js"></script>
