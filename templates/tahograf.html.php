@@ -57,7 +57,7 @@
                   if (!empty($product->price)) {
                     echo 'Pret:'.  $product->price . ' lei cu TVA';
                   } else {
-                    echo  '';
+                    echo  '-';
                   }
                   ?>
                 </p>
