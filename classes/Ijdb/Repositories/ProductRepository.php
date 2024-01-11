@@ -11,7 +11,9 @@ class ProductRepository extends DatabaseTable
             pr.name as producer_name
             FROM `products` p
             LEFT JOIN `producers` pr ON p.producer_id=pr.id
-            WHERE 
+            WHERE
+            p.show = 0 
+            AND
             p.category_id=$categoryId 
             AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
             ORDER BY p.$sort
