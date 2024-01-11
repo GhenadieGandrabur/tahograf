@@ -12,8 +12,12 @@
         <form id="searchform">
           <input type="hidden" name="page" value="0">
           <input type="hidden" name="sort" value="<?= $sort ?>">
+          <?php foreach($producers ?? [] as $producer):?>
+            <label for=""><?= $producer['name']?></label>
+            <input type="checkbox" name="producer[]" value="<?=$producer['id']?>" <?=$producer['enabled'] ?? false ? 'checked': '' ?> onchange="document.getElementById('searchform').submit()">
+          <?php endforeach;?>
           <div class="input-wrapper">
-            <input type="text" name="search" class="input-text" placeholder="cautare">
+            <input type="text" name="search" class="input-text" placeholder="cautare" value="<?=$search?>">
             <input type="submit" value="🔎" class="input-submit">
           </div>
         </form>
@@ -22,10 +26,11 @@
     <div class="flex">
     <div class="pager">
         <?php for ($i = 0; $i < $totalPages; $i++) : ?>
-          <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&page=<?= $i ?>"><?= $i + 1 ?></a>
+          <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&search=<?=$search?>&page=<?= $i ?>"><?= $i + 1 ?></a>
         <?php endfor; ?>
       </div>
       <form id="sortform">
+        <input type="hidden" value="<?=$search?>" name="search">
         <lable>Sortare dupa:</lable>
         <select onchange="document.getElementById('sortform').submit()" name="sort" style="padding:5px ;">
           <option value="title" <?= ($sort === 'title') ? 'selected checked' : '' ?>>Denumire</option>
@@ -69,7 +74,7 @@
     </div>
     <div class="pager">
       <?php for ($i = 0; $i < $totalPages; $i++) : ?>
-        <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&page=<?= $i ?>"><?= $i + 1 ?></a>
+        <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&search=<?=$search?>&page=<?= $i ?>"><?= $i + 1 ?></a>
       <?php endfor; ?>
     </div>
   </div>

@@ -12,7 +12,7 @@ class ProductRepository extends DatabaseTable
             FROM `products` p
             LEFT JOIN `producers` pr ON p.producer_id=pr.id
             WHERE
-            p.show = 0 
+            p.show = 1 
             AND
             p.category_id=$categoryId 
             AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
@@ -20,8 +20,30 @@ class ProductRepository extends DatabaseTable
             LIMIT $page, 12")->fetchAll(\PDO::FETCH_OBJ);
     }
 
-    public function totalProducts($categoryId) {
-		$query = $this->query("SELECT COUNT(*) FROM `products` WHERE category_id=$categoryId");
+    public function findAllProducers($categoryId)
+    {
+        return $this->query("SELECT 
+            pr.id,
+            pr.name
+            FROM `products` p
+            LEFT JOIN `producers` pr ON p.producer_id=pr.id
+            WHERE
+            p.show = 1 
+            AND
+            p.category_id=$categoryId
+            GROUP BY pr.id, pr.name
+           ")->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function totalProducts($categoryId, $search = '') {
+		$query = $this->query("SELECT 
+            COUNT(*) 
+            FROM `products` p
+            LEFT JOIN `producers` pr ON p.producer_id=pr.id
+            WHERE 
+            p.category_id=$categoryId
+            AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
+            ");
 		$row = $query->fetch();
 		return $row[0];
 	}
