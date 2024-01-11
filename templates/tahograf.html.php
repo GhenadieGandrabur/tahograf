@@ -36,7 +36,6 @@
     </div>
     <div>
       <?php foreach ($allproducts as $product) : ?>
-
         <div class="col-s-3 col-3">
           <div class="cardhome">
             <img src="/img/<?= trim($product->code) ?>.jpg" alt="<?= $product->title ?>">
@@ -53,15 +52,15 @@
               <p class="nowrap"> <?= $product->title ?></p>
               <p>Cod: <?= $product->code ?></p>
               <p class="nowrap">Producator: <?= $product->producer_name ?> </p>
-              <p><b>Pret:
+              <p>
                   <?php
                   if (!empty($product->price)) {
-                    echo   $product->price . ' lei TVA inclus.';
+                    echo 'Pret:'.  $product->price . ' lei cu TVA';
                   } else {
-                    echo  '-';
+                    echo  '';
                   }
                   ?>
-                </b></p>
+                </p>
             </div>
           </div>
         </div>
