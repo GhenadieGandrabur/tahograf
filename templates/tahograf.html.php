@@ -66,7 +66,7 @@
                   if (!empty($product->price)) {
                     echo 'Pret:'.  $product->price . ' lei cu TVA';
                   } else {
-                    echo  '<span style="color:#ffcd11;">-</span>';
+                    echo  '<span style="color:#ffcd11;">Nu este in stoc</span>';
                   }
                   ?>
                 </p>
