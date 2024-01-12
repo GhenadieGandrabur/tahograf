@@ -52,7 +52,7 @@ class Tahograf
 	}
 
 	public function tahograf() {
-		return $this->action(1, 'Tahograf', 'tahografe');
+		return $this->action(1, 'Tahografe si accesorii', 'tahografe');
 		// $sort=htmlspecialchars($_GET['sort']??'title');
 		// $search=htmlspecialchars($_GET['search']??'');
 		// $tahos = $this->tahoTable->findAllProducts(1, intval($_GET['page'] ?? 0) * 12, $sort, $search);
@@ -81,7 +81,7 @@ class Tahograf
   
 
 	public function heaters() {
-		return $this->action(2, 'Heaters', 'heaters');
+		return $this->action(2, 'Incalzitoare si piese', 'heaters');
 		// $sort=htmlspecialchars($_GET['sort']??'title');
 		// $search=htmlspecialchars($_GET['search']??'');
 		// $tahos = $this->tahoTable->findAllProducts(2, intval($_GET['page'] ?? 0) * 12, $sort, $search, $_GET['producer']?? []);
@@ -117,7 +117,7 @@ class Tahograf
 	}
 
 	public function radioCb() {
-		return $this->action(3, 'Radio CB', 'radiocb');
+		return $this->action(3, 'Radio CB si antene', 'radiocb');
 		// $sort=htmlspecialchars($_GET['sort']??'title');
 		// $search=htmlspecialchars($_GET['search']??'');
 		// $tahos = $this->tahoTable->findAllProducts(3, intval($_GET['page'] ?? 0) * 12, $sort, $search);
@@ -141,7 +141,7 @@ class Tahograf
 	}
 
 	public function radiovhfuhf(){
-		return $this->action(4, 'Radio VHF / UHF', 'radiovhfuhf');
+		return $this->action(4, 'Radio VHF/UHF', 'radiovhfuhf');
 		// $sort=htmlspecialchars($_GET['sort']??'title');
 		// $search=htmlspecialchars($_GET['search']??'');
 		// $tahos = $this->tahoTable->findAllProducts(4, intval($_GET['page'] ?? 0) * 12, $sort, $search);
