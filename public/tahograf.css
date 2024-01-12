@@ -202,6 +202,14 @@
   background: transparent;
   cursor: pointer;
 }
+.searchbar .input-reset {
+  position: absolute;
+  right: 25px;
+  top: 2px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
 
 .searchbar .input-submit {
   height: 100%;
@@ -209,4 +217,3 @@
 }
 
 
-}

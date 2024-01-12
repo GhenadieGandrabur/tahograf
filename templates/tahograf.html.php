@@ -18,6 +18,7 @@
           <?php endforeach;?>
           <div class="input-wrapper">
             <input type="text" name="search" class="input-text" placeholder="cautare" value="<?=$search?>">
+            <input type="reset" value="❌" class="input-reset">
             <input type="submit" value="🔎" class="input-submit">
           </div>
         </form>
