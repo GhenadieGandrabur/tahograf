@@ -1,2 +1,15 @@
 1. show 0/1
 2. Modal dubleclick
+
+
+
+(1, 'Webasto'),
+(2, 'Eberspaecher'),
+(3, 'VDO'),
+(4, 'EFAS'),
+(5, 'Stoneridge'),
+(6, 'PNI'),
+(7, 'President electronics'),
+(8, 'Kenwood'),
+(9, 'Fomco'),
+(10, 'Svittaho');

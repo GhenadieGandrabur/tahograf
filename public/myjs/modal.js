@@ -6,7 +6,7 @@ var modalImg = document.getElementById("img01");
 var captionText = document.getElementById("caption");
 
 // Attach click event to each image
-document.querySelectorAll('.cardhome img').forEach(img => {
+document.querySelectorAll('.cardhome > img').forEach(img => {
   img.onclick = function() {
     modal.style.display = "block";
     modalImg.src = this.src;

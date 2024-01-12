@@ -4,17 +4,24 @@ use \Ninja\DatabaseTable;
 
 class ProductRepository extends DatabaseTable
 {
-    public function findAllProducts($categoryId, $page = 0, $sort = 'title', $search = '' )
+    public function findAllProducts($categoryId, $page = 0, $sort = 'title', $search = '', $producers = [] )
     {
+        $conditions = '';
+        if(!empty($producers))
+        {
+            $conditions = sprintf('AND p.producer_id IN (%s)', implode(',', $producers));
+            $conditions = htmlspecialchars($conditions);
+        }
         return $this->query("SELECT 
             p.*,
             pr.name as producer_name
             FROM `products` p
             LEFT JOIN `producers` pr ON p.producer_id=pr.id
             WHERE
-            p.show = 1 
-            AND
             p.category_id=$categoryId 
+            $conditions
+            AND
+            p.show = 1
             AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
             ORDER BY p.$sort
             LIMIT $page, 12")->fetchAll(\PDO::FETCH_OBJ);
@@ -35,13 +42,21 @@ class ProductRepository extends DatabaseTable
            ")->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function totalProducts($categoryId, $search = '') {
+    public function totalProducts($categoryId, $search = '', $producers = []) {
+        $conditions = '';
+        if(!empty($producers))
+        {
+            $conditions = sprintf('AND p.producer_id IN (%s)', implode(',', $producers));
+            $conditions = htmlspecialchars($conditions);
+        }
 		$query = $this->query("SELECT 
             COUNT(*) 
             FROM `products` p
             LEFT JOIN `producers` pr ON p.producer_id=pr.id
             WHERE 
             p.category_id=$categoryId
+            AND p.show = 1
+            $conditions
             AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
             ");
 		$row = $query->fetch();

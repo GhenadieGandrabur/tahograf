@@ -11,7 +11,7 @@
       <div class="searchbar">
         <form id="searchform">
           <input type="hidden" name="page" value="0">
-          <input type="hidden" name="sort" value="<?= $sort ?>">
+          <input type="hidden" name="sort" value="<?= $sort ?>">          
           <?php foreach($producers ?? [] as $producer):?>
             <label for=""><?= $producer['name']?></label>
             <input type="checkbox" name="producer[]" value="<?=$producer['id']?>" <?=$producer['enabled'] ?? false ? 'checked': '' ?> onchange="document.getElementById('searchform').submit()">
@@ -26,16 +26,20 @@
     <div class="flex">
     <div class="pager">
         <?php for ($i = 0; $i < $totalPages; $i++) : ?>
-          <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&search=<?=$search?>&page=<?= $i ?>"><?= $i + 1 ?></a>
+          <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&search=<?=$search?>&page=<?= $i ?><?=$producerURI ?? ''?>"><?= $i + 1 ?></a>
         <?php endfor; ?>
       </div>
       <form id="sortform">
         <input type="hidden" value="<?=$search?>" name="search">
+        <?php foreach($producers as $producer):?>
+          <?php if($producer['enabled']):?>
+            <input type="hidden" value="<?=$producer['id']?>" name="producer[]">
+          <?php endif;?>
+        <?php endforeach;?>
         <lable>Sortare dupa:</lable>
         <select onchange="document.getElementById('sortform').submit()" name="sort" style="padding:5px ;">
           <option value="title" <?= ($sort === 'title') ? 'selected checked' : '' ?>>Denumire</option>
-          <option value="price" <?= ($sort === 'price') ? 'selected checked' : '' ?>>Pret</option>
-          <option value="producer_id" <?= ($sort === 'producer_id') ? 'selected checked' : '' ?>>Producator</option>
+          <option value="price" <?= ($sort === 'price') ? 'selected checked' : '' ?>>Pret</option>         
         </select>
       </form>     
     </div>
@@ -74,7 +78,7 @@
     </div>
     <div class="pager">
       <?php for ($i = 0; $i < $totalPages; $i++) : ?>
-        <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&search=<?=$search?>&page=<?= $i ?>"><?= $i + 1 ?></a>
+        <a class="<?= (($_GET['page'] ?? 0) == $i) ? 'active' : '' ?>" href="/<?= $url ?>?sort=<?= $sort ?>&search=<?=$search?>&page=<?= $i ?><?=$producerURI ?? ''?>"><?= $i + 1 ?></a>
       <?php endfor; ?>
     </div>
   </div>
