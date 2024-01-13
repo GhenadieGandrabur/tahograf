@@ -22,6 +22,7 @@ class ProductRepository extends DatabaseTable
         $sort = $this->defineFieldAndOrder($sort);
         $field = $sort['field'];
         $order = $sort['order'];
+        $search = trim($search);
       
         $conditions = '';
         if(!empty($producers))
@@ -39,8 +40,14 @@ class ProductRepository extends DatabaseTable
             $conditions
             AND
             p.show = 1
-            AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
-            ORDER BY p.$field $order
+            AND (p.title LIKE '$search%' OR pr.name LIKE '$search%' OR p.code LIKE '$search%')
+            ORDER BY
+            CASE 
+                WHEN p.price IS NULL THEN 2 
+                WHEN p.price = 0 THEN 1 
+                ELSE 0 
+            END, 
+            p.$field $order
             LIMIT $page, 12")->fetchAll(\PDO::FETCH_OBJ);
     }
 
@@ -61,6 +68,7 @@ class ProductRepository extends DatabaseTable
 
     public function totalProducts($categoryId, $search = '', $producers = []) {
         $conditions = '';
+        $search = trim($search);
         if(!empty($producers))
         {
             $conditions = sprintf('AND p.producer_id IN (%s)', implode(',', $producers));
@@ -74,7 +82,7 @@ class ProductRepository extends DatabaseTable
             p.category_id=$categoryId
             AND p.show = 1
             $conditions
-            AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
+            AND (p.title LIKE '$search%' OR pr.name LIKE '$search%' OR p.code LIKE '$search%')
             ");
 		$row = $query->fetch();
 		return $row[0];

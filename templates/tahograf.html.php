@@ -47,7 +47,7 @@
     </div>
     <div>
       <?php foreach ($allproducts as $product) : ?>
-        <div class="col-s-3 col-3">
+        <div class="col-s-3 col-3" style="<?=(floatval($product->price) == 0) ? 'opacity: 0.5' : '' ?>">
           <div class="cardhome">
             <img src="/img/<?= trim($product->code) ?>.jpg" alt="<?= $product->title ?>">
 
@@ -68,7 +68,7 @@
                   if (!empty($product->price)) {
                     echo 'Pret:'.  $product->price . ' lei cu TVA';
                   } else {
-                    echo  '<span style="color:#ffcd11;">Nu este in stoc</span>';
+                    echo  '<span>Nu este disponibil</span>';
                   }
                   ?>
                 </p>
