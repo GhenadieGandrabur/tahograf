@@ -18,7 +18,7 @@
           <?php endforeach;?>
           <div class="input-wrapper">
             <input type="text" name="search" class="input-text" placeholder="cautare" value="<?=$search?>">
-            <input type="reset" value="❌" class="input-reset">
+            <input type="button" value="❌" class="input-reset" id="resetSearchForm">
             <input type="submit" value="🔎" class="input-submit">
           </div>
         </form>
@@ -40,7 +40,8 @@
         <lable>Sortare dupa:</lable>
         <select onchange="document.getElementById('sortform').submit()" name="sort" style="padding:5px ;">
           <option value="title" <?= ($sort === 'title') ? 'selected checked' : '' ?>>Denumire</option>
-          <option value="price" <?= ($sort === 'price') ? 'selected checked' : '' ?>>Pret</option>         
+          <option value="price" <?= ($sort === 'price') ? 'selected checked' : '' ?>>Pret ieftine</option>         
+          <option value="price_desc" <?= ($sort === 'price_desc') ? 'selected checked' : '' ?>>Pret scupm</option>         
         </select>
       </form>     
     </div>
@@ -92,3 +93,10 @@
 
  <?php include __DIR__ . "/../includes/advertising.php" ?> 
 <script src="/myjs/modal.js"></script>
+<script>
+  document.getElementById('resetSearchForm').addEventListener('click', e=>{
+    e.preventDefault()
+    document.querySelector('#searchform input[name="search"]').value  = ""
+    document.getElementById('searchform').submit()
+  })
+</script>

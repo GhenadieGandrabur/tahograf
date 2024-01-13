@@ -4,8 +4,25 @@ use \Ninja\DatabaseTable;
 
 class ProductRepository extends DatabaseTable
 {
+    private function defineFieldAndOrder($value)
+    {
+        switch ($value)
+        {
+            case 'title':
+                return ['field'=>'title', 'order'=>'asc'];
+            case 'price':    
+                return ['field'=>'price', 'order'=>'asc'];
+            case 'price_desc':    
+                return ['field'=>'price', 'order'=>'desc'];           
+        }
+        return ['field'=>'title', 'order'=>'asc'];
+    }
     public function findAllProducts($categoryId, $page = 0, $sort = 'title', $search = '', $producers = [] )
     {
+        $sort = $this->defineFieldAndOrder($sort);
+        $field = $sort['field'];
+        $order = $sort['order'];
+      
         $conditions = '';
         if(!empty($producers))
         {
@@ -23,7 +40,7 @@ class ProductRepository extends DatabaseTable
             AND
             p.show = 1
             AND (p.title LIKE '$search%' OR pr.name LIKE '$search%')
-            ORDER BY p.$sort
+            ORDER BY p.$field $order
             LIMIT $page, 12")->fetchAll(\PDO::FETCH_OBJ);
     }
 
