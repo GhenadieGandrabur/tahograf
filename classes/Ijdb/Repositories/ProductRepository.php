@@ -9,11 +9,11 @@ class ProductRepository extends DatabaseTable
         switch ($value)
         {
             case 'title':
-                return ['field'=>'title', 'order'=>'asc'];
+                return ['field'=>'p.title', 'order'=>'asc'];
             case 'price':    
-                return ['field'=>'price', 'order'=>'asc'];
+                return ['field'=>'pl.price', 'order'=>'asc'];
             case 'price_desc':    
-                return ['field'=>'price', 'order'=>'desc'];           
+                return ['field'=>'pl.price', 'order'=>'desc'];           
         }
         return ['field'=>'title', 'order'=>'asc'];
     }
@@ -32,9 +32,11 @@ class ProductRepository extends DatabaseTable
         }
         return $this->query("SELECT 
             p.*,
+            pl.price, 
             pr.name as producer_name
             FROM `products` p
             LEFT JOIN `producers` pr ON p.producer_id=pr.id
+            LEFT JOIN (SELECT product_id, brutto_price as price, max(created)  FROM pricelist GROUP BY product_id, brutto_price) pl ON pl.product_id = p.id
             WHERE
             p.category_id=$categoryId 
             $conditions
@@ -43,11 +45,11 @@ class ProductRepository extends DatabaseTable
             AND (p.title LIKE '$search%' OR pr.name LIKE '$search%' OR p.code LIKE '$search%')
             ORDER BY
             CASE 
-                WHEN p.price IS NULL THEN 2 
-                WHEN p.price = 0 THEN 1 
+                WHEN pl.price IS NULL THEN 2 
+                WHEN pl.price = 0 THEN 1 
                 ELSE 0 
             END, 
-            p.$field $order
+            $field $order
             LIMIT $page, 12")->fetchAll(\PDO::FETCH_OBJ);
     }
 
