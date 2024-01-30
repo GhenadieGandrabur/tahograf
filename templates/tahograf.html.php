@@ -40,8 +40,8 @@
         <lable>Sortare dupa:</lable>
         <select onchange="document.getElementById('sortform').submit()" name="sort" style="padding:5px ;">
           <option value="title" <?= ($sort === 'title') ? 'selected checked' : '' ?>>Denumire</option>
-          <option value="price" <?= ($sort === 'price') ? 'selected checked' : '' ?>>Pret ieftine</option>         
-          <option value="price_desc" <?= ($sort === 'price_desc') ? 'selected checked' : '' ?>>Pret scupm</option>         
+          <option value="price" <?= ($sort === 'price') ? 'selected checked' : '' ?>>Pret crescator</option>         
+          <option value="price_desc" <?= ($sort === 'price_desc') ? 'selected checked' : '' ?>>Pret descrescator</option>         
         </select>
       </form>     
     </div>
