@@ -14,15 +14,24 @@ class Tahograf
 		$this->producerTable = $producerTable;		
 	} 
 
-	public function home() {
+	public function home() 
+	{
 		$title = 'Tahograf';
 		return ['template' => 'home.html.php', 'title' => $title];
 	}
+
 	private function action($categoryid, $title, $url)
 	{
 		$sort=htmlspecialchars($_GET['sort']??'title');
 		$search=htmlspecialchars($_GET['search']??'');
 		$tahos = $this->tahoTable->findAllProducts($categoryid, intval($_GET['page'] ?? 0) * 12, $sort, $search, $_GET['producer']?? []);
+		foreach($tahos as $taho)
+		{
+			if(!file_exists(__DIR__."/../../../public/img/".$taho->code.".jpg"))
+			{
+				
+			}
+		}
 		$producers = $this->tahoTable->findAllProducers($categoryid);
 		$totalTaho = $this->tahoTable->total();
 		$producerURI ='';

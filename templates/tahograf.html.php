@@ -49,8 +49,11 @@
       <?php foreach ($allproducts as $product) : ?>
         <div class="col-s-3 col-3" style="<?=(floatval($product->price) == 0) ? 'opacity: 0.5' : '' ?>">
           <div class="cardhome">
-            <img src="/img/<?= trim($product->code) ?>.jpg" alt="<?= $product->title ?>">
-
+            <?php if(!file_exists(__DIR__."/../public/img/".$product->code.".jpg")): ?>
+            <img src="/img/noimage.jpg">
+            <?php else:?>
+              <img src="/img/<?= trim($product->code) ?>.jpg" alt="<?= $product->title ?>">
+              <?php endif;?>
             <div id="myModal" class="modal">
               <div class="modal-content-wrapper">
                 <span class="close">&times;</span>

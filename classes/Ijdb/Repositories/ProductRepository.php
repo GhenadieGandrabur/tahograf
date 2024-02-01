@@ -30,27 +30,29 @@ class ProductRepository extends DatabaseTable
             $conditions = sprintf('AND p.producer_id IN (%s)', implode(',', $producers));
             $conditions = htmlspecialchars($conditions);
         }
-        return $this->query("SELECT 
-            p.*,
-            pl.price, 
-            pr.name as producer_name
-            FROM `products` p
-            LEFT JOIN `producers` pr ON p.producer_id=pr.id
-            LEFT JOIN (SELECT product_id, brutto_price as price, max(created)  FROM pricelist GROUP BY product_id, brutto_price) pl ON pl.product_id = p.id
-            WHERE
-            p.category_id=$categoryId 
-            $conditions
-            AND
-            p.show = 1
-            AND (p.title LIKE '$search%' OR pr.name LIKE '$search%' OR p.code LIKE '$search%')
-            ORDER BY
-            CASE 
-                WHEN pl.price IS NULL THEN 2 
-                WHEN pl.price = 0 THEN 1 
-                ELSE 0 
-            END, 
-            $field $order
-            LIMIT $page, 12")->fetchAll(\PDO::FETCH_OBJ);
+        $query = "SELECT 
+        p.*,
+        pl.price, 
+        pr.name as producer_name
+        FROM `products` p
+        LEFT JOIN `producers` pr ON p.producer_id=pr.id
+        LEFT JOIN (SELECT product_id, brutto_price as price, max(created)  FROM pricelist GROUP BY product_id) pl ON pl.product_id = p.id
+        WHERE
+        p.category_id=$categoryId 
+        $conditions
+        AND
+        p.show = 1
+        AND (p.title LIKE '$search%' OR pr.name LIKE '$search%' OR p.code LIKE '$search%')
+        ORDER BY
+        CASE 
+            WHEN pl.price IS NULL THEN 2 
+            WHEN pl.price = 0 THEN 1 
+            ELSE 0 
+        END, 
+        $field $order
+        LIMIT $page, 12";
+
+        return $this->query($query)->fetchAll(\PDO::FETCH_OBJ);
     }
 
     public function findAllProducers($categoryId)
