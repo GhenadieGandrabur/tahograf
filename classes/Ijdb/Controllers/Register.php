@@ -70,7 +70,7 @@ class Register {
 			header('Location: /author/success');
 		}
 		else {
-			//If the data is not valid, show the form again
+	
 			return ['template' => 'register.html.php', 
 				    'title' => 'Register an account',
 				    'variables' => [

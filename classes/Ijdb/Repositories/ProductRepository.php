@@ -41,7 +41,7 @@ class ProductRepository extends DatabaseTable
         p.category_id=$categoryId 
         $conditions
         AND
-        p.show = 1
+        p.visible = 1
         AND (p.title LIKE '$search%' OR pr.name LIKE '$search%' OR p.code LIKE '$search%')
         ORDER BY
         CASE 
@@ -63,7 +63,7 @@ class ProductRepository extends DatabaseTable
             FROM `products` p
             LEFT JOIN `producers` pr ON p.producer_id=pr.id
             WHERE
-            p.show = 1 
+            p.visible = 1 
             AND
             p.category_id=$categoryId
             GROUP BY pr.id, pr.name
@@ -84,7 +84,7 @@ class ProductRepository extends DatabaseTable
             LEFT JOIN `producers` pr ON p.producer_id=pr.id
             WHERE 
             p.category_id=$categoryId
-            AND p.show = 1
+            AND p.visible = 1
             $conditions
             AND (p.title LIKE '$search%' OR pr.name LIKE '$search%' OR p.code LIKE '$search%')
             ");
