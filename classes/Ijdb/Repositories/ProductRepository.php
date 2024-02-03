@@ -31,12 +31,25 @@ class ProductRepository extends DatabaseTable
             $conditions = htmlspecialchars($conditions);
         }
         $query = "SELECT 
-        p.*,
-        pl.price, 
-        pr.name as producer_name
-        FROM `products` p
-        LEFT JOIN `producers` pr ON p.producer_id=pr.id
-        LEFT JOIN (SELECT product_id, brutto_price as price, max(created)  FROM pricelist GROUP BY product_id) pl ON pl.product_id = p.id
+            p.*,
+            u.unit_name,
+            c.name as category_name, 
+            pr.name as producer_name,
+            pl.price 
+            FROM products p
+            LEFT JOIN units u ON u.id = p.unit_id
+            LEFT JOIN categories c ON c.id = p.category_id
+            LEFT JOIN producers pr ON pr.id = p.producer_id
+            LEFT JOIN (SELECT
+                    product_id, 
+                    brutto_price as price, 
+                    created
+                FROM pricelist
+                WHERE (product_id, created) IN (
+                    SELECT product_id, MAX(created) as max_created
+                    FROM pricelist
+                    GROUP BY product_id
+                )) pl ON pl.product_id = p.id
         WHERE
         p.category_id=$categoryId 
         $conditions
@@ -51,7 +64,8 @@ class ProductRepository extends DatabaseTable
         END, 
         $field $order
         LIMIT $page, 12";
-
+// print '<pre>'. print_r($query, true).'</pre>';
+// die;
         return $this->query($query)->fetchAll(\PDO::FETCH_OBJ);
     }
 
