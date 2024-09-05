@@ -47,7 +47,7 @@
     </div>
     <div>
       <?php foreach ($allproducts as $product) : ?>
-        <div class="col-s-3 col-3" style="<?=(floatval($product->price) == 0) ? 'opacity: 0.5' : '' ?>">
+        <div class="col-s-3 col-3" style="<?=(floatval($product->price) == 0) ? 'opacity: 0.8' : '' ?>">
           <div class="cardhome">
             <?php if(!file_exists(__DIR__."/../public/img/".$product->code.".jpg")): ?>
             <img src="/img/noimage.jpg">
@@ -69,7 +69,7 @@
               <p>
                   <?php
                   if (!empty($product->price)) {
-                    echo 'Pret:'.  $product->price . ' lei cu TVA';
+                    echo 'Pret:'.  round($product->price,2) . ' lei cu TVA';
                   } else {
                     echo  '<span>Nu este disponibil</span>';
                   }

@@ -44,7 +44,7 @@
 
 <body>	
 	<?php include 'menu.html.php' ?>
-
+<h1>Test</h1>
 	<?= $output ?>
 
 	<?php include 'footer.html.php' ?>

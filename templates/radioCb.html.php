@@ -22,7 +22,7 @@
               <p><b>Pret:
                   <?php
                   if (!empty($product['taho']->price)) {
-                    echo   $product['taho']->price . ' lei TVA inclus.';
+                    echo  round(($product['taho']->price), 2). ' lei TVA inclus.';
                   } else {
                     echo  '-';
                   }

@@ -35,14 +35,15 @@ class ProductRepository extends DatabaseTable
             u.unit_name,
             c.name as category_name, 
             pr.name as producer_name,
-            pl.price 
+            pl.price *  (SELECT sell FROM exchange WHERE currency_id =  pl.currency_id ORDER BY created DESC LIMIT 1) as price
             FROM products p
             LEFT JOIN units u ON u.id = p.unit_id
             LEFT JOIN categories c ON c.id = p.category_id
             LEFT JOIN producers pr ON pr.id = p.producer_id
             LEFT JOIN (SELECT
                     product_id, 
-                    brutto_price as price, 
+                    brutto_price  as price, 
+                    currency_id,
                     created
                 FROM pricelist
                 WHERE (product_id, created) IN (
@@ -64,8 +65,7 @@ class ProductRepository extends DatabaseTable
         END, 
         $field $order
         LIMIT $page, 12";
-// print '<pre>'. print_r($query, true).'</pre>';
-// die;
+
         return $this->query($query)->fetchAll(\PDO::FETCH_OBJ);
     }
 

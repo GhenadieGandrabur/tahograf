@@ -25,6 +25,7 @@ class Tahograf
 		$sort=htmlspecialchars($_GET['sort']??'title');
 		$search=htmlspecialchars($_GET['search']??'');
 		$tahos = $this->tahoTable->findAllProducts($categoryid, intval($_GET['page'] ?? 0) * 12, $sort, $search, $_GET['producer']?? []);
+		
 		foreach($tahos as $taho)
 		{
 			if(!file_exists(__DIR__."/../../../public/img/".$taho->code.".jpg"))
