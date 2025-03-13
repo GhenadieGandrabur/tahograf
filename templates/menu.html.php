@@ -26,7 +26,7 @@
     <a href="/contacte">Contacte</a>
     
     <div class="phone">
-        <a href="tel:+37369113318"><i class="fa fa-mobile" style="font-size:20px"></i> +373 69113318</a>
+        <a href="tel:+37369113318"><i class="fa fa-mobile" style="font-size:20px"></i> +373 69113318.</a>
     </div>
 
      <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i>

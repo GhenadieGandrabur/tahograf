@@ -43,7 +43,6 @@
 </head>
 
 <body>	
-	test
 	<?php include 'menu.html.php' ?>
 <h1>Test</h1>
 	<?= $output ?>
